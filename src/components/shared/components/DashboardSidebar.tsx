@@ -1,9 +1,14 @@
-
+import { AppSidebar } from "@/components/app-sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 const DashboardSidebar = () => {
   return (
-    <div>
-      Sidebar
-    </div>
+    <SidebarProvider>
+    <AppSidebar />
+    <main>
+      <SidebarTrigger />
+      {/* {children} */}
+    </main>
+  </SidebarProvider>
   )
 }
 
