@@ -1,15 +1,6 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar";
 const DashboardSidebar = () => {
-  return (
-    <SidebarProvider>
-    <AppSidebar />
-    <main>
-      <SidebarTrigger />
-      {/* {children} */}
-    </main>
-  </SidebarProvider>
-  )
-}
+  return <AppSidebar />;
+};
 
-export default DashboardSidebar
+export default DashboardSidebar;
