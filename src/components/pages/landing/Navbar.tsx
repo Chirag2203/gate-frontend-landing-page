@@ -3,6 +3,7 @@ import { useState } from "react";
 // import logo from "@/assets/logo.png";
 import { navItems } from "../../../constants/index.js";
 import { Button } from "@/components/ui/button.js";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -27,12 +28,15 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-4 items-center">
+            <Link to={"/signin"}>
             <Button  variant={"outline"}>
               Sign In
-            </Button>
+            </Button></Link>
+            <Link to={"/signup"}>
             <Button>
               Create an account
             </Button>
+            </Link>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>
