@@ -24,3 +24,23 @@ export interface DrillsStatsProps {
     >;
   }[];
 }
+
+interface DrillDetail {
+    detailLogo:  ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>>;
+    detailName: string;
+}
+
+interface DrillFeature {
+    featureLogo:  ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>>;
+    featureName: string;
+    featureDescription: string;
+}
+
+export interface DrillIntroData {
+    Logo:   ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>>;
+    drillName: string;
+    drillDescription: string;
+    drillDetails: DrillDetail[];
+    drillWorking: string;
+    drillFeatures: DrillFeature[];
+}
