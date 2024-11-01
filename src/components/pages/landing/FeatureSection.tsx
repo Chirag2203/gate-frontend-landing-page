@@ -1,35 +1,120 @@
-import { features } from "@/constants/index";
-
+import { IoGameController } from "react-icons/io5";
+import { FaTrophy } from "react-icons/fa6";
+import { TbCardsFilled } from "react-icons/tb";
+import loginPic from "@/assets/loginPic.svg";
+import { motion } from "framer-motion";
 const FeatureSection = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
-      <div className="text-center">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
-          Feature
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
-          Easily build{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-            your code
-          </span>
-        </h2>
-      </div>
-      <div className="flex flex-wrap mt-10 lg:mt-20">
-        {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3">
-            <div className="flex">
-              <div className="flex mx-6 h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
-                {feature.icon}
-              </div>
-              <div>
-                <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
-                <p className="text-md p-2 mb-20 text-neutral-500">
-                  {feature.description}
-                </p>
-              </div>
+    <div className="flex flex-col items-center sm:mt-12 mt-4 ">
+      <motion.div
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 40,
+          },
+
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center"
+      >
+        <p className="text-primary font-semibold text-sm">WHY USE MENTARA.AI</p>
+        <p className="sm:text-3xl text-2xl font-bold mt-4 text-center sm:text-left">
+          Study Smarter, Not Harder
+        </p>
+        <p className="sm:text-lg text-neutral-500 mt-4 max-w-xl text-center">
+          Turn your revisions into results with AI-powered drills, smart
+          flashcaeds and personalised weak area analysis.
+        </p>
+      </motion.div>
+      <div className="w-full flex sm:flex-row flex-col mt-16 justify-between items-center">
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: -40,
+            },
+
+            visible: {
+              opacity: 1,
+              x: 0,
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="sm:w-2/5 flex flex-col items-start gap-8"
+        >
+          <div className="flex items-start gap-4">
+            <div className="bg-primary p-3 rounded-xl">
+              <IoGameController className="text-white text-2xl" />
+            </div>
+            <div className="flex flex-col gap-2 items-start">
+              <p className="sm:text-2xl text-xl font-semibold ">
+                Gamified Practice
+              </p>
+              <p className="text-neutral-500 sm:text-md text-sm ">
+                Turn GATE preparation into an engaging game. Boost your score
+                and let go of your exam anxieties.
+              </p>
             </div>
           </div>
-        ))}
+          <div className="flex items-start gap-4">
+            <div className="bg-primary p-3 rounded-xl">
+              <TbCardsFilled className="text-white text-2xl " />
+            </div>
+            <div className="flex flex-col gap-2 items-start">
+              <p className="sm:text-2xl text-xl font-semibold ">
+                Smart Flashcards
+              </p>
+              <p className="text-neutral-500 sm:text-md text-sm">
+                Revise 2x faster with personalised flashcards. No more looking
+                for notes on the internet.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="bg-primary p-3 rounded-xl">
+              <FaTrophy className="text-white text-2xl" />
+            </div>
+            <div className="flex flex-col gap-2 items-start">
+              <p className="sm:text-2xl text-xl font-semibold ">
+                AI-Guided Learning
+              </p>
+              <p className="text-neutral-500 sm:text-md text-sm ">
+                Your 24x7 GATE mentor. No more jumping from one resource to
+                another. Get all your doubts cleared.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: 40,
+            },
+
+            visible: {
+              opacity: 1,
+              x: 0,
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="sm:w-2/5 sm:mt-0 mt-4"
+        >
+          <img src={loginPic} alt="loginPic" className="w-full" />
+        </motion.div>
       </div>
     </div>
   );
