@@ -1,0 +1,106 @@
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.button-ai {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 20px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.button-ai:before, .button-ai:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  border-radius: 22px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-ai:after {
+  filter: blur(100px);
+}
+
+
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.button-login {
+  --primary-color: #1520A6;
+  --secondary-color: #fff;
+  --hover-color: #080C40;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.button-login .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-login .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.button-login .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.button-login:hover {
+  background-color: var(--hover-color);
+}
+
+.button-login:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.button-login:hover .arrow:before {
+  right: 0;
+}
