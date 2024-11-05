@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { TimerIcon } from "lucide-react";
 import Navbar from "./Navbar";
+import PricingCards from "./PricingCards";
+import Footer from "./Footer";
+import FAQs from "./FAQs";
 
 const Pricing = () => {
   // Set the end date to November 24, 2024
@@ -66,6 +69,11 @@ const Pricing = () => {
           </span>
         </p>
       </div>
+      <PricingCards/>
+      <div className="max-w-7xl mx-auto pt-20 px-6">
+        <FAQs />
+      </div>
+      <Footer/>
     </div>
   );
 };
