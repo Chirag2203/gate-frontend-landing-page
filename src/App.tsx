@@ -5,6 +5,7 @@ import { DashboardHome } from "./components/pages/dashboard";
 import { Signin, Signup } from "./components/pages/auth";
 import { LandingPage,Pricing, OurStory } from "./components/pages/landing";
 import { NotFound } from "./components/shared/components";
+import Onboarding from "./components/pages/onboarding/Onboarding";
 const App = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/drills/speed-assesment-test" element={<SpeedAssesmentTest/>}/>
           <Route path="/tasks" element={<TasksHome />} />
           <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/onboarding" element={<Onboarding />} />
 
           <Route path="*" element={<NotFound/>} />
         </Routes>

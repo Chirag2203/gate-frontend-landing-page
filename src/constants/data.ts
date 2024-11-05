@@ -153,41 +153,111 @@ export const statsData = [
   },
 ];
 
-
 export const speedAssesmentIntroData = {
-    drillLogo: NotebookIcon,
-    drillName: "Speed Assesment Test",
-    drillDescription: "Train your GATE instincts.",
-    drillDetails: [
-        {
-            detailLogo: Clock,
-            detailName: "5 mins",
-        },
-        {
-            detailLogo: NotebookPenIcon,
-            detailName: "10 questions",
-        },
-    ],
-    drillWorking:
-        "explain the working of the drill in detail here, how it helps in improving the speed and accuracy of the students.",
-    drillFeatures: [
-        {
-            featureLogo: Clock,
-            featureName: "Master time management",
-            featureDescription:
-                "Practice making quick decision on questions in a timed environment.",
-        },
-        {
-            featureLogo: Pause,
-            featureName: "Save precious exam minutes",
-            featureDescription:
-                "Take a timed test to simulate exam conditions and improve your speed.",
-        },
-        {
-            featureLogo: ThumbsUp,
-            featureName: "Make a smarter question choice",
-            featureDescription:
-                " Learn to decode question patterns and pick the right one to solve.",
-        },
-    ],
+  drillLogo: NotebookIcon,
+  drillName: "Speed Assesment Test",
+  drillDescription: "Train your GATE instincts.",
+  drillDetails: [
+    {
+      detailLogo: Clock,
+      detailName: "5 mins",
+    },
+    {
+      detailLogo: NotebookPenIcon,
+      detailName: "10 questions",
+    },
+  ],
+  drillWorking:
+    "explain the working of the drill in detail here, how it helps in improving the speed and accuracy of the students.",
+  drillFeatures: [
+    {
+      featureLogo: Clock,
+      featureName: "Master time management",
+      featureDescription:
+        "Practice making quick decision on questions in a timed environment.",
+    },
+    {
+      featureLogo: Pause,
+      featureName: "Save precious exam minutes",
+      featureDescription:
+        "Take a timed test to simulate exam conditions and improve your speed.",
+    },
+    {
+      featureLogo: ThumbsUp,
+      featureName: "Make a smarter question choice",
+      featureDescription:
+        " Learn to decode question patterns and pick the right one to solve.",
+    },
+  ],
 };
+
+export const avatarData = [
+  {
+    id: 1,
+    link: "https://avatar.iran.liara.run/public/22",
+  },
+  {
+    id: 2,
+    link: "https://avatar.iran.liara.run/public/32",
+  },
+  {
+    id: 3,
+    link: "https://avatar.iran.liara.run/public/17",
+  },
+  {
+    id: 4,
+    link: "https://avatar.iran.liara.run/public/36",
+  },
+  {
+    id: 5,
+    link: "https://avatar.iran.liara.run/public/38",
+  },
+  {
+    id: 6,
+    link: "https://avatar.iran.liara.run/public/98",
+  },
+  {
+    id: 7,
+    link: "https://avatar.iran.liara.run/public/93",
+  },
+  {
+    id: 8,
+    link: "https://avatar.iran.liara.run/public/60",
+  },
+  {
+    id: 9,
+    link: "https://avatar.iran.liara.run/public/64",
+  },
+  { id: 10, link: "https://avatar.iran.liara.run/public/37" },
+  { id: 11, link: "https://avatar.iran.liara.run/public/39" },
+  { id: 13, link: "https://avatar.iran.liara.run/public/42" },
+  { id: 14, link: "https://avatar.iran.liara.run/public/57" },
+  { id: 15, link: "https://avatar.iran.liara.run/public/76" },
+  { id: 16, link: "https://avatar.iran.liara.run/public/85" },
+];
+export const subjects = [
+  {
+    id: 1,
+    name: "Mathematics",
+  },
+  {
+    id: 2,
+    name: "Aptitude",
+  },
+  {
+    id: 3,
+    name: "Reasoning",
+  },
+  {
+    id: 4,
+    name: "English",
+  },
+  {
+    id: 5,
+    name: "General Knowledge",
+  },
+  {
+    id: 6,
+    name: "Computer Science",
+  },
+];
