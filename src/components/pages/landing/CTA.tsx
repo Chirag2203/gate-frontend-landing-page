@@ -16,12 +16,12 @@ const CTA = () => {
         variants={{
           hidden: {
             opacity: 0,
-            x: -40,
+            y: 40,
           },
 
           visible: {
             opacity: 1,
-            x: 0,
+            y: 0,
           },
         }}
         initial="hidden"
@@ -47,12 +47,12 @@ const CTA = () => {
         variants={{
           hidden: {
             opacity: 0,
-            x: 40,
+            y: 40,
           },
 
           visible: {
             opacity: 1,
-            x: 0,
+            y: 0,
           },
         }}
         initial="hidden"
