@@ -24,7 +24,7 @@ const FeatureSection = () => {
         viewport={{ once: true }}
         className="flex flex-col items-center"
       >
-        <p className="text-primary font-bold text-sm font-hero">WHY USE KALPP0</p>
+        <p className="text-primary font-medium text-sm">WHY USE KALPP0</p>
         <p className="sm:text-3xl text-2xl font-bold mt-4 text-center sm:text-left">
           Study Smarter, Not Harder
         </p>

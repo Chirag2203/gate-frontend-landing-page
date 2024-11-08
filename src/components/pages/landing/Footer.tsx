@@ -15,7 +15,7 @@ const Footer = () => {
             to={"/"}
             className="flex justify-between flex-col items-left mb-4 sm:gap-0 gap-2 rtl:space-x-reverse"
           >
-            <span className="sm:text-3xl text-xl flex items-baseline font-semibold whitespace-nowrap dark:text-white font-hero">
+            <span className="sm:text-3xl text-xl flex items-baseline font-semibold whitespace-nowrap dark:text-white ">
               Kalppo
              
             </span>

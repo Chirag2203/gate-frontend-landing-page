@@ -1,9 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { MdKeyboardArrowRight } from "react-icons/md";
-
+import {motion} from "framer-motion";
 const PricingCards = () => {
   return (
-    <div className="">
+    <motion.div className="" variants={{
+      hidden: {
+        opacity: 0,
+        y: 40,
+      },
+
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    }}
+    initial="hidden"
+    whileInView="visible"
+    transition={{ duration: 1, delay: 0.1 }}
+    viewport={{ once: true }}>
       <section className=" dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-2xl lg:py-16 lg:px-6">
           {/* <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
@@ -309,7 +323,7 @@ const PricingCards = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

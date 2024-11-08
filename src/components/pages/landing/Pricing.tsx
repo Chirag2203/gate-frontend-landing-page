@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import PricingCards from "./PricingCards";
 import Footer from "./Footer";
 import FAQs from "./FAQs";
-
+import { motion } from "framer-motion";
 const Pricing = () => {
   // Set the end date to November 24, 2024
   const endDate = new Date("2024-11-24T00:00:00Z"); // 'Z' denotes UTC timezone
@@ -49,7 +49,21 @@ const Pricing = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col items-center gap-2 sm:mt-8 mt-4 px-4">
+      <motion.div className="flex flex-col items-center gap-2 sm:mt-8 mt-4 px-4" variants={{
+      hidden: {
+        opacity: 0,
+        y: 20,
+      },
+
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    }}
+    initial="hidden"
+    whileInView="visible"
+    transition={{ duration: 1, delay: 0.1 }}
+    viewport={{ once: true }}>
         <p className="text-primary bg-blue-100 font-medium px-4 py-2 rounded-full text-sm">
           Recommended by Toppers
         </p>
@@ -68,7 +82,7 @@ const Pricing = () => {
             {timeLeft.seconds} s
           </span>
         </p>
-      </div>
+      </motion.div>
       <PricingCards />
       <FAQs />
 
