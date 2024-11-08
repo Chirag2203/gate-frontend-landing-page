@@ -49,7 +49,7 @@ const Pricing = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col items-center gap-2 sm:mt-8">
+      <div className="flex flex-col items-center gap-2 sm:mt-8 mt-4 px-4">
         <p className="text-primary bg-blue-100 font-medium px-4 py-2 rounded-full text-sm">
           Recommended by Toppers
         </p>
@@ -69,11 +69,10 @@ const Pricing = () => {
           </span>
         </p>
       </div>
-      <PricingCards/>
-      <div className="max-w-7xl mx-auto pt-20 px-6">
-        <FAQs />
-      </div>
-      <Footer/>
+      <PricingCards />
+      <FAQs />
+
+      <Footer />
     </div>
   );
 };

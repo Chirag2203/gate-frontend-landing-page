@@ -69,6 +69,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        hero: ['Hero Light', 'sans-serif'],
       },
     },
   },

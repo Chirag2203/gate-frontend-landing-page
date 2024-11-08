@@ -2,21 +2,21 @@ import { Link } from "react-router-dom";
 // import { RiInstagramFill } from "react-icons/ri";
 // import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import { IoLogoWhatsapp } from "react-icons/io5";
+// import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuDot } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { HiArrowUpRight } from "react-icons/hi2";
 const Footer = () => {
   return (
-    <footer className="bg-primary shadow dark:bg-gray-900 text-white mt-12  ">
-      <div className="w-full max-w-7xl mx-auto p-4 md:py-8 ">
+    <footer className="bg-primary shadow dark:bg-gray-900 text-white mt-12 px-4 sm:px-16 2xl:px-32 ">
+      <div className="w-full mx-auto py-4 md:py-8 ">
         <div className="flex sm:flex-row flex-col  sm:items-center sm:justify-between">
           <Link
             to={"/"}
             className="flex justify-between flex-col items-left mb-4 sm:gap-0 gap-2 rtl:space-x-reverse"
           >
-            <span className="sm:text-3xl text-xl flex items-baseline font-semibold whitespace-nowrap dark:text-white">
-              Mentara
+            <span className="sm:text-3xl text-xl flex items-baseline font-semibold whitespace-nowrap dark:text-white font-hero">
+              Kalppo
              
             </span>
             <p className="text-sm text-gray-200 sm:mt-1  ">
@@ -67,12 +67,12 @@ const Footer = () => {
             {/* <a href="https://www.youtube.com/@mentaraHQ">
               <FaYoutube className="text-2xl text-gray-200" />
             </a> */}
-            <a href=" https://www.linkedin.com/company/mentarahq/">
+            <a href=" https://www.linkedin.com/company/kalppo/">
               <FaLinkedin className="text-2xl text-gray-200" />
             </a>
-            <a href="https://chat.whatsapp.com/B7GuwSnpxbVBn7IOQtmeGR">
+            {/* <a href="https://chat.whatsapp.com/B7GuwSnpxbVBn7IOQtmeGR">
               <IoLogoWhatsapp className="text-2xl text-gray-200" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

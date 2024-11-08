@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Hero Light';
+  src: url('/fonts/Hero_Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 /* From Uiverse.io by JaydipPrajapati1910 */ 
 .button-ai {
   

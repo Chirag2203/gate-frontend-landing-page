@@ -13,14 +13,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg ">
-      <div className="container px-4 mx-auto relative lg:text-sm">
+    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg px-4 sm:px-16 2xl:px-32">
+      <div className="container  mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <Link to={"/"}>
             <div className="flex items-center flex-shrink-0">
               {/* <img className="h-10 w-10 mr-2" src={logo} alt="Logo" /> */}
-              <span className="text-xl tracking-tight font-bold text-primary">
-                Mentara AI
+              <span className="text-xl font-hero  font-black text-primary">
+                Kalppo
               </span>
             </div>
           </Link>

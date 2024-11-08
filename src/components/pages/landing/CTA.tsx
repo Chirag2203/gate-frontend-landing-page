@@ -28,7 +28,7 @@ const CTA = () => {
         whileInView="visible"
         transition={{ duration: 1, delay: 0.1 }}
         viewport={{ once: true }}
-        className="sm:w-2/5 flex flex-col items-center sm:items-start gap-4 sm:px-24 px-12 "
+        className="sm:w-2/5 flex flex-col items-center sm:items-start gap-4 px-4 sm:px-16 2xl:px-32 "
       >
         <p className="sm:text-3xl text-2xl sm:text-left text-center font-semibold">
           Your Intelligent Path to GATE Success

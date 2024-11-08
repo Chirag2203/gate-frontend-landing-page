@@ -5,7 +5,7 @@ import loginPic from "@/assets/loginPic.svg";
 import { motion } from "framer-motion";
 const FeatureSection = () => {
   return (
-    <div className="flex flex-col items-center sm:mt-12 mt-4 ">
+    <div className="flex flex-col items-center sm:mt-12 mt-4 px-4 sm:px-16 w-full">
       <motion.div
         variants={{
           hidden: {
@@ -24,7 +24,7 @@ const FeatureSection = () => {
         viewport={{ once: true }}
         className="flex flex-col items-center"
       >
-        <p className="text-primary font-semibold text-sm">WHY USE MENTARA.AI</p>
+        <p className="text-primary font-bold text-sm font-hero">WHY USE KALPP0</p>
         <p className="sm:text-3xl text-2xl font-bold mt-4 text-center sm:text-left">
           Study Smarter, Not Harder
         </p>

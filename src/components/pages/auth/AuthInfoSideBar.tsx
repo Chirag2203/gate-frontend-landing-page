@@ -15,8 +15,8 @@ const AuthInfoSideBar = () => {
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
   return (
-    <div className="bg-primary min-h-screen p-12">
-      <p className="text-white text-lg font-medium">Mentara.ai</p>
+    <div className="bg-primary min-h-screen p-12 " >
+      <p className="text-white text-xl font-bold font-hero">Kalppo</p>
       <div className="mt-24 ">
         <p className="text-white text-5xl font-medium">
           Your Gateway to IITs & Elite PSUs

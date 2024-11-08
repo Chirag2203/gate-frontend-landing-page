@@ -23,7 +23,7 @@ const HeroSection = () => {
     whileInView="visible"
     transition={{ duration: 1, delay: 0.1 }}
     viewport={{ once: true }}
-      className="flex flex-col pt-8 sm:gap-0 gap-4 items-center  lg:mt-4 bg-center bg-no-repeat sm:min-h-screen"
+      className="flex flex-col pt-8 sm:gap-0 gap-4 items-center  lg:mt-4 bg-center bg-no-repeat sm:min-h-screen sm:px-12"
       style={{
         backgroundImage: `url(${heroBg})`, // Set the image as background
       }}
@@ -40,7 +40,7 @@ const HeroSection = () => {
         personalised AI guidance.
       </p>
       <div className="flex flex-col gap-2 items-center justify-center my-10">
-        <Link to={"/drills"}>
+        <Link to={"/signin"}>
           <Button className="rounded-full px-7 bg-gradient-to-b hover:to-primary-dark/50 transition-colors from-primary to-primary-dark text-md py-5">
             Get Started <HiArrowUpRight />
           </Button>

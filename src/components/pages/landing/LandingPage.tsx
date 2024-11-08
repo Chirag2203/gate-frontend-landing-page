@@ -9,20 +9,18 @@ import AlertNews from "./AlertNews";
 
 const LandingPage = () => {
   return (
-    <>
+    <div className="">
       <AlertNews />
       <Navbar />
+      <div className="2xl:px-32">
       <HeroSection />
-      <div className="max-w-7xl mx-auto pt-20 px-6">
-        <FeatureSection />
+      <FeatureSection />
       </div>
       <CTA />
-      <div className="max-w-7xl mx-auto pt-20 px-6">
-        <FAQs />
-      </div>
+      <FAQs />
       <Footer />
       {/* <Pricing /> */}
-    </>
+    </div>
   );
 };
 

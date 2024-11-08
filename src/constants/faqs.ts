@@ -22,7 +22,7 @@ export const faqData= [
     },
     {
       id: 5,
-      quest: " Can I use Mentara.ai alongside my coaching?",
+      quest: " Can I use Kalppo alongside my coaching?",
       ans: "Yes! We complement your coaching perfectly. While coaching builds your foundation, we help you convert that knowledge into marks with targeted drills and efficient revision strategies. Our platform is designed to optimize your final preparation days, regardless of where you learned the concepts from.",
     },
   ];

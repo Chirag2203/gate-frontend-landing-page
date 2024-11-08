@@ -3,8 +3,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const PricingCards = () => {
   return (
-    <div>
-      <section className="bg-white dark:bg-gray-900">
+    <div className="">
+      <section className=" dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-2xl lg:py-16 lg:px-6">
           {/* <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -16,7 +16,7 @@ const PricingCards = () => {
             </p>
           </div> */}
           <div className="space-y-8 lg:flex   sm:gap-4 xl:gap-4 lg:space-y-0">
-            <div className="flex flex-col sm:w-1/4 justify-between p-6 mx-auto max-w-2xl text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className="flex flex-col sm:w-[400px] w-full justify-between p-6 mx-auto max-w-2xl text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
               <div>
               <h3 className="mb-2 text-2xl font-semibold text-primary">
                 Basic plan
@@ -77,7 +77,7 @@ const PricingCards = () => {
                 Get started <MdKeyboardArrowRight />
               </Button>
             </div>
-            <div className="flex flex-col sm:w-1/4 justify-between p-6 mx-auto max-w-xl text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className="flex flex-col sm:w-[400px] w-full justify-between p-6 mx-auto max-w-xl text-center text-gray-900 bg-white rounded-lg border border-primary shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
               <div>
               <h3 className="mb-2 text-2xl font-semibold text-primary">Pro plan</h3>
               <div className="flex justify-center items-baseline my-4">
@@ -169,7 +169,7 @@ const PricingCards = () => {
                     <p className="text-xs text-gray-500">(Only for first 100 students)</p>
                 </div>
             </div>
-            <div className="flex flex-col sm:w-1/4 justify-between p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className="flex flex-col sm:w-[400px] w-fulljustify-between p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
               <div>
               <h3 className="mb-2 text-2xl font-semibold text-primary">Power plan</h3>
               <div className="flex justify-center items-baseline my-4">

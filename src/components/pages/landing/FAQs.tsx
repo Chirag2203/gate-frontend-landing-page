@@ -10,7 +10,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="">
+    <div className="px-4 sm:px-16 mt-8 sm:mt-12 2xl:px-32 ">
       <p className="text-primary font-semibold text-sm sm:text-left text-center">SOMETHING UNCLEAR?</p>
       <p className="sm:text-3xl text-2xl font-bold sm:mt-2 sm:text-left text-center">
         Frequently Asked Questions
