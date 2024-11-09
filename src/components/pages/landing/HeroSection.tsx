@@ -42,7 +42,7 @@ const HeroSection = () => {
       <div className="flex flex-col gap-2 items-center justify-center my-10">
         <Link to={"/signin"}>
           <Button className="rounded-full px-7 bg-gradient-to-b hover:to-primary-dark/50 transition-colors from-primary to-primary-dark text-md py-5">
-            Get Started <HiArrowUpRight />
+          Join the waitlist <HiArrowUpRight />
           </Button>
         </Link>
         <p className="text-sm text-gray-500 ">

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import {motion} from "framer-motion";
+import priceBg from "@/assets/price-bg.png"
 const PricingCards = () => {
   return (
     <motion.div className="" variants={{
@@ -88,10 +89,15 @@ const PricingCards = () => {
               </ul>
               </div>
               <Button variant={"blueGradient"}>
-                Get started <MdKeyboardArrowRight />
+              Join the waitlist <MdKeyboardArrowRight />
               </Button>
             </div>
-            <div className="flex flex-col sm:w-[400px] w-full justify-between p-6 mx-auto max-w-xl text-center text-gray-900 bg-white rounded-lg border border-primary shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className="flex flex-col sm:w-[400px] w-full justify-between p-6 mx-auto max-w-xl text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white relative">
+              <p className="absolute -right-4 sm:-right-6 sm:-top-6 -top-4 h-12 sm:h-16 w-12 sm:w-16 bg-center bg-cover text-white text-center sm:pt-4 pt-2 text-xs font-medium "
+              style={{
+                backgroundImage: `url(${priceBg})`, // Set the image as background
+              }}
+              >Save <br /> 50%</p>
               <div>
               <h3 className="mb-2 text-2xl font-semibold text-primary">Pro plan</h3>
               <div className="flex justify-center items-baseline my-4">
@@ -178,12 +184,17 @@ const PricingCards = () => {
               </div>
                 <div className="w-full flex flex-col -mb-5 gap-1">
                 <Button variant={"blueGradient"} className="w-full">
-                    Get started <MdKeyboardArrowRight />
+                    Join the waitlist <MdKeyboardArrowRight />
                     </Button>
                     <p className="text-xs text-gray-500">(Only for first 100 students)</p>
                 </div>
             </div>
-            <div className="flex flex-col sm:w-[400px] w-fulljustify-between p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className="flex flex-col sm:w-[400px] w-fulljustify-between p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-blue-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white relative">
+            <p className="absolute -right-4 sm:-right-6 sm:-top-6 -top-4 h-12 sm:h-16 w-12 sm:w-16 bg-center bg-cover text-white text-center sm:pt-4  pt-2 text-xs font-medium  "
+              style={{
+                backgroundImage: `url(${priceBg})`, // Set the image as background
+              }}
+              >Save <br /> 38%</p>
               <div>
               <h3 className="mb-2 text-2xl font-semibold text-primary">Power plan</h3>
               <div className="flex justify-center items-baseline my-4">
@@ -315,7 +326,7 @@ const PricingCards = () => {
               </div>
               <div className="w-full flex flex-col -mb-5 gap-1">
                 <Button variant={"blueGradient"} className="w-full">
-                    Get started <MdKeyboardArrowRight />
+                Join the waitlist <MdKeyboardArrowRight />
                     </Button>
                     <p className="text-xs text-gray-500">(Only for first 100 students)</p>
                 </div>

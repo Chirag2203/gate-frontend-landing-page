@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Drills from "@/assets/Drills.svg";
 import { Link } from "react-router-dom";
-import { HiArrowUpRight } from "react-icons/hi2";
+// import { HiArrowUpRight } from "react-icons/hi2";
 import squares from "@/assets/squares.png";
 import { motion } from "framer-motion";
 const CTA = () => {
@@ -38,8 +38,8 @@ const CTA = () => {
         </p>
         <Link to={"/drills"}>
           <Button className="rounded-full text-primary px-7 sm:mt-4 mt-0 bg-gradient-to-b hover:to-gray-200 transition-colors from-white to-white text-md py-5">
-            Get Started for FREE
-            <HiArrowUpRight />
+          Join the waitlist
+            {/* <HiArrowUpRight /> */}
           </Button>
         </Link>
       </motion.div>

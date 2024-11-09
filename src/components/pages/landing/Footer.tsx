@@ -29,12 +29,12 @@ const Footer = () => {
 
               <Link to={"/support"}>
                 <Button className="bg-white rounded-full hover:border hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
-                  Get Started for FREE <HiArrowUpRight />
+                Join the waitlist <HiArrowUpRight />
                 </Button>
               </Link>
               <div className="flex flex-col sm:items-end ">
                 <p className="font-medium text-lg  ">Contact us</p>
-                <p className="text-gray-100">hello@mentara.xyz</p>
+                <p className="text-gray-100"> hello@kalppo.com</p>
               </div>
             </ul>
           </div>
@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="flex sm:items-center items-start">
           <div className="flex sm:gap-8 gap-4 sm:flex-row flex-col">
             <p className="text-sm text-gray-200">
-              © {new Date().getFullYear()} Mentara.{" "}
+              © {new Date().getFullYear()} Kalppo.{" "}
               <br className="sm:hidden block" /> All rights reserved.
             </p>
             <div className="flex  gap-1 items-end">
