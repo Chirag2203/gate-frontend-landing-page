@@ -8,7 +8,6 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
-  User2,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -59,8 +58,8 @@ const data = {
       ],
     },
     {
-      title: "Self Assessment",
-      url: "/self-assessment",
+      title: "Tasks",
+      url: "#",
       icon: ListCheck,
       items: [
         {
@@ -78,10 +77,16 @@ const data = {
       ],
     },
     {
-      title: "Flashcards",
-      url: "/flashcards",
+      title: "Lessons",
+      url: "#",
       icon: BookOpen,
-      
+      items: [
+        {
+          title: "History",
+          url: "#",
+        },
+        
+      ],
     },
     {
       title: "Drills",
@@ -90,7 +95,7 @@ const data = {
       items: [
         {
           title: "Speed Assesment",
-          url: "/drills/speed-assesment-test",
+          url: "/drills/speed-assesment",
         },
         {
           title: "Answer Elimination",
@@ -110,18 +115,6 @@ const data = {
         },
         
       ],
-    },
-    {
-      title:"Guided Learning",
-      url: "/guided-learning",
-      icon: Map,
-      
-    },
-    {
-      title:"Find a mentor",
-      url: "/find-a-mentor",
-      icon: User2,
-      
     },
     {
       title: "Settings",

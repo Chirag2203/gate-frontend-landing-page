@@ -43,4 +43,19 @@ export interface DrillIntroData {
     drillDetails: DrillDetail[];
     drillWorking: string;
     drillFeatures: DrillFeature[];
+    drillStart: () => void;
+}
+
+export interface Question {
+  id: number,
+  question: string,
+  options: string[],
+}
+
+export interface TestScreenProps{
+  questions: Question[],
+}
+
+export interface MainPanelProps {
+  question : Question,
 }

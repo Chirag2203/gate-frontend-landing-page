@@ -9,6 +9,7 @@ const DrillsIntro = ({
   drillDetails,
   drillWorking,
   drillFeatures,
+  drillStart,
 }: DrillIntroData) => {
   return (
     <div className="w-full">
@@ -80,7 +81,7 @@ const DrillsIntro = ({
           </div>
         </div>
         <div className="flex items-center">
-          <Button className="w-2/3 mx-auto mt-36" variant={"blueGradient"}>
+          <Button className="w-2/3 mx-auto mt-36" variant={"blueGradient"} onClick={drillStart}>
             Start Challenge <MdKeyboardArrowRight />
           </Button>
         </div>
