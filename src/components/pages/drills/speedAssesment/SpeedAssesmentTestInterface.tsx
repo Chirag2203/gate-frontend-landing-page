@@ -1,9 +1,12 @@
-import MainPanel from "./subComponents/MainPanel";
-import QuestionPanel from "./subComponents/QuestionPanel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { QuestionStatusSpeedTest, TestScreenProps } from "@/types/types";
+import TopBar from "./SpeedAssesmentTestHelpBar";
+import SpeedAssesmentQuestionViewPanel from "./SpeedAssesmentQuestionViewPanel";
+import SpeedAssesmentTestView from "./SpeedAssesmentTestView";
 
-const TestInterface = ({ questions }: TestScreenProps) => {
+const SpeedAssesmentTestInterface = ({ questions, handleEndTest }: TestScreenProps) => {
+  const [timeLeft, setTimeLeft] = useState(15 * 60);
+  const [questionsAttempted, setQuestionsAttempted] = useState(0);
   const [selectedQuestionId, setSelectedQuestionId] = useState(
     questions[0]?.id
   );
@@ -60,23 +63,57 @@ const TestInterface = ({ questions }: TestScreenProps) => {
     setLastQuestionId(questions[nextIndex].id);
   };
 
+  const updateQuestionsAttempted = () => {
+    const attemptedCount = Object.values(questionStatus).filter(
+      (status) => status === "attempted"
+    ).length;
+    setQuestionsAttempted(attemptedCount);
+  };
+
+  useEffect(() => {
+    updateQuestionsAttempted();
+  }, [questionStatus]);
+
+  
+
+  useEffect(() => {
+    const updateTimer = () => {
+      setTimeLeft((prev) => prev - 1);
+    }
+    const timer = setInterval(updateTimer, 1000);
+    return () => clearInterval(timer);
+
+  }, []);
+
   const selectedQuestion = questions.find((q) => q.id === selectedQuestionId);
 
   return (
-    <div>
+    <div className="flex gap-8 justify-between p-12 h-screen ">
       {selectedQuestion ? (
-        <MainPanel question={selectedQuestion} onSkip={handleSkip} onSaveForLater={handleSaveForLater} onNext={handleNext} />
+        <SpeedAssesmentTestView
+          question={selectedQuestion}
+          onSkip={handleSkip}
+          onSaveForLater={handleSaveForLater}
+          onNext={handleNext}
+          timeLeft={timeLeft}
+          questionsAttempted={questionsAttempted}
+        />
       ) : (
         <div>Loading question...</div>
       )}
-      <QuestionPanel
-        questions={questions}
-        questionStatus={questionStatus}
-        onQuestionSelect={handleQuestionSelect}
-        selectedQuestionId={selectedQuestionId}
-      />
+      <div className="flex flex-col gap-4 w-1/4">
+        <TopBar 
+        handleEndTest={handleEndTest}
+        />
+        <SpeedAssesmentQuestionViewPanel
+          questions={questions}
+          questionStatus={questionStatus}
+          onQuestionSelect={handleQuestionSelect}
+          selectedQuestionId={selectedQuestionId}
+        />
+      </div>
     </div>
   );
 };
 
-export default TestInterface;
+export default SpeedAssesmentTestInterface;

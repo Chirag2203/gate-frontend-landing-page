@@ -56,6 +56,7 @@ export type QuestionStatusSpeedTest = "notReached" | "attempted" | "skipped" | "
 
 export interface TestScreenProps{
   questions: Question[],
+  handleEndTest: () => void;
 }
 
 export interface MainPanelProps {
@@ -63,6 +64,8 @@ export interface MainPanelProps {
   onSkip: () => void;
   onSaveForLater: () => void;
   onNext: () => void;
+  timeLeft: number;
+  questionsAttempted: number;
 }
 
 export interface QuestionPanelProps {

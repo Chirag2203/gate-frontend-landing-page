@@ -1,5 +1,5 @@
 import DrillsHome from "./DrillsHome";
-import SpeedAssessmentTest from "./SpeedAssessmentTest";
+import SpeedAssessmentTest from "./speedAssesment/SpeedAssessmentTest";
 import DrillsIntro from "./DrillsIntro";
 
 export {
