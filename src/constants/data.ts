@@ -191,7 +191,7 @@ export const speedAssesmentIntroData = {
   ],
 };
 
-export const speedAssessmentQuestions = [
+export const AssessmentQuestions = [
   {
     id: 1,
     question: "What is the time complexity of binary search?",

@@ -52,10 +52,22 @@ export interface Question {
   options: string[],
 }
 
+export type QuestionStatusSpeedTest = "notReached" | "attempted" | "skipped" | "saveForLater";
+
 export interface TestScreenProps{
   questions: Question[],
 }
 
 export interface MainPanelProps {
-  question : Question,
+  question: Question;
+  onSkip: () => void;
+  onSaveForLater: () => void;
+  onNext: () => void;
+}
+
+export interface QuestionPanelProps {
+  questions: Question[];
+  questionStatus: Record<number, QuestionStatusSpeedTest>;
+  onQuestionSelect: (id: number) => void;
+  selectedQuestionId: number;
 }

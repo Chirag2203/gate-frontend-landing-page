@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { DrillsHome, SpeedAssesmentTest } from "./components/pages/drills";
+import { DrillsHome, SpeedAssessmentTest } from "./components/pages/drills";
 import { TasksHome } from "./components/pages/tasks";
 import { DashboardHome } from "./components/pages/dashboard";
 import { Signin, Signup } from "./components/pages/auth";
@@ -20,7 +20,7 @@ const App = () => {
 
           {/* Protected */}
           <Route path="/drills" element={<DrillsHome />} />
-          <Route path="/drills/speed-assesment-test" element={<SpeedAssesmentTest/>}/>
+          <Route path="/drills/speed-assesment-test" element={<SpeedAssessmentTest/>}/>
           <Route path="/tasks" element={<TasksHome />} />
           <Route path="/dashboard" element={<DashboardHome />} />
           <Route path="/onboarding" element={<Onboarding />} />

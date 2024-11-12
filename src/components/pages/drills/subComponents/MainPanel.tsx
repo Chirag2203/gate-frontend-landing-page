@@ -1,19 +1,28 @@
-import { Checkbox } from "@/components/ui/checkbox"
 import { MainPanelProps } from "@/types/types"
 
-const MainPanel: React.FC<MainPanelProps> = ({ question }) => {
+const MainPanel = ({ question, onSkip, onSaveForLater, onNext }: MainPanelProps) => {
   return (
-    <div>
+    <div >
       <h2>Question {question.id}</h2>
       <p>{question.question}</p>
       {question.options.map((option: string) => {
         return (
           <div>
-            <Checkbox />
             {option}
           </div>
         )
       })}
+      <div>
+        <button onClick={onSkip}>
+          Skip
+        </button>
+        <button onClick={onSaveForLater}>
+          Save for later
+        </button>
+        <button onClick={onNext}>
+          Next
+        </button>
+      </div>
     </div>
   )
 }
