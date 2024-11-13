@@ -48,7 +48,8 @@ const OnboardingForm = () => {
   };
 
   return (
-    <div className="bg-white max-h-3xl rounded-xl justify-between flex flex-col sm:px-8 gap-4 md:w-3/5  sm:w-4/5 w-5/6 px-4  mx-auto py-4 ">
+    <div className="bg-white max-h-3xl  rounded-xl justify-between flex flex-col sm:px-8 gap-4 md:w-3/5  sm:w-4/5 w-5/6 px-4  mx-auto py-4 ">
+      <div className="flex flex-col gap-4">
       <p className="text-primary font-semibold text-center">
         Complete your Profile!
       </p>
@@ -247,6 +248,7 @@ const OnboardingForm = () => {
             </Select>
           </div>
         </div>
+      </div>
       </div>
       <Button className="mt-12" onClick={handleSubmit}>
         Save and Continue <MdKeyboardArrowRight />

@@ -9,6 +9,7 @@ import Onboarding from "./components/pages/onboarding/Onboarding";
 import AnswerElimination from "./components/pages/drills/answerElimination/AnswerElimination";
 import AccuracyVsSpeed from "./components/pages/drills/accuracySpeed/AccuracyVsSpeed";
 import CalculatorEfficiency from "./components/pages/drills/calculatorEfficiency/CalculatorEfficiency";
+import UserProfile from "./components/pages/profile/UserProfile";
 const App = () => {
   return (
     <div>
@@ -27,8 +28,13 @@ const App = () => {
           <Route path="/drills/answer-elimination" element={<AnswerElimination/>}/>
           <Route path="/drills/accuracy-vs-speed" element={<AccuracyVsSpeed />} />
           <Route path="/drills/calculator-efficiency" element={<CalculatorEfficiency />} />
+
+          <Route path="/profile" element={<UserProfile />} />
+
           <Route path="/tasks" element={<TasksHome />} />
+          
           <Route path="/dashboard" element={<DashboardHome />} />
+
           <Route path="/onboarding" element={<Onboarding />} />
 
           <Route path="*" element={<NotFound/>} />
