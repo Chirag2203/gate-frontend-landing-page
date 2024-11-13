@@ -33,6 +33,7 @@ export function NavMain({
     }[];
   }[];
 }) {
+  console.log("NavMain items", items);
   return (
     <SidebarGroup>
       {/* <SidebarGroupLabel>Platform</SidebarGroupLabel> */}
@@ -43,8 +44,9 @@ export function NavMain({
               <Collapsible
                 key={item.title}
                 asChild
-                defaultOpen={item.isActive}
+                open={item.isActive}
                 className="group/collapsible"
+                
               >
                 <SidebarMenuItem>
                   <CollapsibleTrigger asChild>
