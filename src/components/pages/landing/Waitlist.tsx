@@ -47,12 +47,12 @@ const Waitlist = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="px-4 sm:px-16 mt-8 sm:mt-12 2xl:px-32 flex flex-col items-center w-full ">
+      <div className="px-4 sm:px-16 mt-8 sm:mt-12 2xl:px-32 flex flex-col sm:gap-0  items-center w-full ">
         <div>
-          <p className="sm:text-3xl text-2xl font-semibold text-primary">
+          <p className="text-center sm:text-3xl text-2xl font-semibold text-primary sm:mb-0 mb-2">
             Be Among the First to Transform Your GATE Journey
           </p>
-          <p className="text-gray-700 max-w-xl mx-auto text-center">
+          <p className="text-gray-700 max-w-xl sm:text-md text-sm mx-auto text-center">
             Join the waitlist for the December launch. Selected 100 users get
             FREE access until GATE 2025!
           </p>
@@ -71,8 +71,8 @@ const Waitlist = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-gray-100 shadow-sm mt-4">
-          <form className="my-8" onSubmit={handleSubmit}>
+        <div className="max-w-xl w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-gray-100 shadow-sm mt-4">
+          <form className="sm:my-4 my-2" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-6 ">
               <LabelInputContainer>
                 <Label htmlFor="name"> Name</Label>

@@ -1,3 +1,4 @@
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-images";
 import { setOne, setTwo } from "@/constants/recommended";
 import { motion } from "framer-motion";
 const Recommended = () => {
@@ -19,43 +20,12 @@ const Recommended = () => {
       whileInView="visible"
       transition={{ duration: 1.5, delay: 0.2 }}
       viewport={{ once: true }}
-      className="pt-8  flex flex-col  gap-12 items-center "
+      className="pt-8  flex flex-col  sm:gap-12 gap-2 sm:mb-0 mb-4 items-center "
     >
       <p className="sm:text-xl text-lg text-primary font-medium">
         We are recommended by people at
       </p>
-      <div className="sm:flex sm:flex-col w-full gap-4 hidden">
-        <div className="flex gap-4 w-full justify-between">
-          {setOne.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt="img"
-              className="w-24 h-24 object-contain transform  transition-transform duration-300 hover:scale-110 cursor-pointer"
-            />
-          ))}
-        </div>
-        <div className="flex gap-16 w-full justify-center">
-          {setTwo.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt="img"
-              className="w-24 h-24 object-contain transition-transform duration-300 hover:scale-110 cursor-pointer"
-            />
-          ))}
-        </div>
-      </div>
-      <div className="sm:hidden  flex gap-6 justify-center items-center flex-wrap">
-        {allImgs.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="img"
-            className="w-14 h-14 object-contain transform  transition-transform duration-300 hover:scale-110 cursor-pointer"
-          />
-        ))}
-      </div>
+      <InfiniteMovingCards items={allImgs} direction="right" speed="slow" />
     </motion.div>
   );
 };

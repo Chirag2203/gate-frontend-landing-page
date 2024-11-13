@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import OTPcomponent from "./OTPcomponent";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import MobileSignin from "./MobileSignin";
 const Signin = () => {
   const [signupData, setSignupData] = useState({
     name: "",
@@ -60,7 +61,8 @@ const Signin = () => {
 
   return (
     <AuthWrapper>
-      <div className="w-full flex items-center justify-center flex-col min-h-screen pb-8">
+     
+     <div className="sm:flex hidden w-full  items-center justify-center flex-col min-h-screen pb-8">
         <div className="mr-10 flex-col flex items-start mb-4">
           <p className="font-bold text-3xl">Ace your GATE exam!</p>
           <p className="text-sm text-gray-500">
@@ -139,6 +141,10 @@ const Signin = () => {
           )}
         </div>
       </div>
+     
+     <div className="sm:hidden block">
+     <MobileSignin/>
+     </div>
     </AuthWrapper>
   );
 };

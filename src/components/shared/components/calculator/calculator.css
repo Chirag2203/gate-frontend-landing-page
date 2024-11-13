@@ -85,9 +85,7 @@
   }
   
   @media (max-width: 610px) {
-    body {
-      padding: 1rem;
-    }
+    
     .calculator {
       max-width: fit-content;
     }
