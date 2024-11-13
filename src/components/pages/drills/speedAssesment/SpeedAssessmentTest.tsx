@@ -69,7 +69,7 @@ const SpeedAssessmentTest = () => {
     setShowFullscreenWarning(false);
     setTestStarted(3);
     exitFullScreen();
-    // redirectToDrills();
+    redirectToDrills();
   };
 
   const handleStartTest = () => {

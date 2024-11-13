@@ -1,4 +1,4 @@
-import { AssessmentQuestions } from "@/constants/data"
+// import { AssessmentQuestions } from "@/constants/data"
 const SpeedAssesmentFullTest = () => {
   return (
      <div>
