@@ -62,7 +62,7 @@
   --secondary-color: #fff;
   --hover-color: #080C40;
   --arrow-width: 10px;
-  --arrow-stroke: 2px;
+  --arrow-stroke: 1px;
   box-sizing: border-box;
   border: 0;
   color: var(--secondary-color);

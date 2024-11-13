@@ -3,7 +3,7 @@ import { DrillsHome, SpeedAssessmentTest } from "./components/pages/drills";
 import { TasksHome } from "./components/pages/tasks";
 import { DashboardHome } from "./components/pages/dashboard";
 import { Signin, Signup } from "./components/pages/auth";
-import { LandingPage,Pricing, OurStory } from "./components/pages/landing";
+import { LandingPage,Pricing, OurStory, Waitlist } from "./components/pages/landing";
 import { NotFound } from "./components/shared/components";
 import Onboarding from "./components/pages/onboarding/Onboarding";
 import AnswerElimination from "./components/pages/drills/answerElimination/AnswerElimination";
@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/" element={<LandingPage/>} />
           <Route path="/pricing" element={<Pricing/>} />
           <Route path="/our-story" element={<OurStory/>} />
+          <Route path="/join-waitlist" element={<Waitlist />} />
 
           {/* Protected */}
           <Route path="/drills" element={<DrillsHome />} />
@@ -32,7 +33,7 @@ const App = () => {
           <Route path="/profile" element={<UserProfile />} />
 
           <Route path="/tasks" element={<TasksHome />} />
-          
+
           <Route path="/dashboard" element={<DashboardHome />} />
 
           <Route path="/onboarding" element={<Onboarding />} />
