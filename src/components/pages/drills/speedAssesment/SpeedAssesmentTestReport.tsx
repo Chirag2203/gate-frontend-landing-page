@@ -4,11 +4,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 const SpeedAssesmentTestReport = ({
-    timeToRedirect,
-
-}:
-    { timeToRedirect: number }
-) => {
+  timeToRedirect,
+  handleStartTest,
+}: {
+  timeToRedirect: number;
+  handleStartTest: () => void;
+}) => {
   const data = [
     {
       name: "Questions seen",
@@ -71,13 +72,16 @@ const SpeedAssesmentTestReport = ({
           <Button variant={"outline"} className="px-6">
             Do it Later
           </Button>
-          <Button variant={"blueGradient"} className="px-6">
+          <Button variant={"blueGradient"} className="px-6"
+          onClick={handleStartTest}>
             {" "}
             Start Solving
             <MdKeyboardArrowRight />
           </Button>
         </div>
-        <p className="text-sm mt-4">Redirecting to Drills in {timeToRedirect} seconds...</p>
+        <p className="text-sm mt-4">
+          Redirecting to Drills in {timeToRedirect} seconds...
+        </p>
       </div>
     </DashboardWrapper>
   );

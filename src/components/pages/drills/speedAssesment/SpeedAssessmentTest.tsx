@@ -6,6 +6,7 @@ import { AssessmentQuestions } from "@/constants/data";
 import SpeedAssesmentTestInterface from "./SpeedAssesmentTestInterface";
 import SpeedAssesmentTestReport from "./SpeedAssesmentTestReport";
 import FullScreenWarning from "./FullScreenWarning";
+import SpeedAssesmentFullTest from "./SpeedAssesmentFullTest";
 
 const SpeedAssessmentTest = () => {
   const [isTestStarted, setTestStarted] = useState(0); // 0 => test not started, 1 => test ongoing, 2 => test ended
@@ -29,13 +30,14 @@ const SpeedAssessmentTest = () => {
     }
   };
 
+  var id2: NodeJS.Timeout;
   //redirect to drills after 15 seconds
   const redirectToDrills = () => {
     const id = setInterval(() => {
       setTimeToRedirect((prev) => prev - 1);
     }, 1000);
 
-    setTimeout(() => {
+    id2 = setTimeout(() => {
       window.location.href = "/drills";
     }, 60000);
     return () => clearInterval(id);
@@ -65,9 +67,15 @@ const SpeedAssessmentTest = () => {
   const handleEndTest = () => {
     // End the test
     setShowFullscreenWarning(false);
-    setTestStarted(2);
+    setTestStarted(3);
     exitFullScreen();
-    redirectToDrills();
+    // redirectToDrills();
+  };
+
+  const handleStartTest = () => {
+    clearTimeout(id2);
+    enterFullScreen();
+    setTestStarted(2);
   };
 
   return (
@@ -92,16 +100,28 @@ const SpeedAssessmentTest = () => {
               handleEndTest={handleEndTest}
             />
           ) : (
-            <SpeedAssesmentTestInterface questions = {AssessmentQuestions}
-            handleEndTest={handleEndTest}/>
+            <SpeedAssesmentTestInterface
+              questions={AssessmentQuestions}
+              handleEndTest={handleEndTest}
+            />
           )}
-          {/* <SpeedAssesmentTestInterface
-            questions={AssessmentQuestions}
-            handleEndTest={handleEndTest}
-          /> */}
+        </>
+      ) : isTestStarted === 2 ? (
+        <>
+          {showFullscreenWarning ? (
+            <FullScreenWarning
+              handleReEnterFullscreen={handleReEnterFullscreen}
+              handleEndTest={handleEndTest}
+            />
+          ) : (
+            <SpeedAssesmentFullTest />
+          )}
         </>
       ) : (
-        <SpeedAssesmentTestReport timeToRedirect={timeToRedirect} />
+        <SpeedAssesmentTestReport
+          timeToRedirect={timeToRedirect}
+          handleStartTest={handleStartTest}
+        />
       )}
     </div>
   );
