@@ -1,3 +1,4 @@
+import Calculator from "@/components/shared/components/calculator/Calculator";
 import { QuestionPanelProps } from "@/types/types";
 
 const SpeedAssesmentQuestionViewPanel = ({
@@ -21,28 +22,29 @@ const SpeedAssesmentQuestionViewPanel = ({
   //   }
   // };
   return (
-    <div className="p-4 rounded-xl border border-gray-200 flex flex-col gap-2 ">
-      <div className="flex gap-4 items-center flex-wrap">
-        <p className="text-sm  ">
-          <span className=" px-2.5 py-0.5 rounded-md bg-green-500 mr-2"></span>{" "}
-          Attempted
-        </p>
-        <p className="text-sm  ">
-          <span className=" px-2.5 py-0.5 rounded-md bg-gray-300 mr-2"></span>{" "}
-          Saved for Later
-        </p>
-        <p className="text-sm  ">
-          <span className=" px-2.5 py-0.5 rounded-md bg-red-500 mr-2"></span>{" "}
-          Skipped
-        </p>
-      </div>
-      <p className="text-sm pt-4 font-medium">Choose a question</p>
-      <div className="flex flex-wrap gap-2">
-        {questions.map((q) => (
-          <button
-            key={q.id}
-            onClick={() => onQuestionSelect(q.id)}
-            className={`
+    <div className="  flex flex-col gap-8 h-screen ">
+      <div className=" p-4 rounded-xl border border-gray-200">
+        <div className="flex gap-4 items-center flex-wrap">
+          <p className="text-sm  ">
+            <span className=" px-2.5 py-0.5 rounded-md bg-green-500 mr-2"></span>{" "}
+            Attempted
+          </p>
+          <p className="text-sm  ">
+            <span className=" px-2.5 py-0.5 rounded-md bg-gray-300 mr-2"></span>{" "}
+            Saved for Later
+          </p>
+          <p className="text-sm  ">
+            <span className=" px-2.5 py-0.5 rounded-md bg-red-500 mr-2"></span>{" "}
+            Skipped
+          </p>
+        </div>
+        <p className="text-sm py-4 font-medium">Choose a question</p>
+        <div className="flex flex-wrap gap-2 ">
+          {questions.map((q) => (
+            <button
+              key={q.id}
+              onClick={() => onQuestionSelect(q.id)}
+              className={`
           h-12 w-12 rounded  font-medium text-sm
           ${
             q.id === selectedQuestionId
@@ -61,11 +63,15 @@ const SpeedAssesmentQuestionViewPanel = ({
               : "bg-white"
           }
         `}
-          >
-            {q.id}
-          </button>
-        ))}
+            >
+              {q.id}
+            </button>
+          ))}
+        </div>
       </div>
+      {localStorage.getItem("isCalculatorOpen") === "true" ? (
+        <Calculator />
+      ) : null}
     </div>
   );
 };

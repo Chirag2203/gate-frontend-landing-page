@@ -5,9 +5,20 @@ import { FaCalculator } from "react-icons/fa6";
 const SpeedAssesmentTestHelpBar = ({handleEndTest}:
   {handleEndTest: () => void}
 ) => {
+  const handleCalculatorOpen = () => {
+    const currentStatus = localStorage.getItem("isCalculatorOpen");
+    if (currentStatus === "true") {
+      localStorage.setItem("isCalculatorOpen", "false");
+    } else {
+      localStorage.setItem("isCalculatorOpen", "true");
+    }
+    
+  }
+
   return (
     <div className="flex gap-2 justify-between items-center">
-      <GeneralTooltip Icon={FaCalculator} text="Calculator" size="xl" />
+      <GeneralTooltip Icon={FaCalculator} text="Calculator" size="xl" onClick={handleCalculatorOpen} />
+    
       <Button
         className="hover:bg-red-50 hover:text-red-500 hover:border-red-100"
         variant={"outline"}
