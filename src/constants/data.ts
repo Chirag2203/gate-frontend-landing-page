@@ -153,6 +153,14 @@ export const statsData = [
   },
 ];
 
+
+
+
+
+
+
+
+
 export const speedAssesmentIntroData = {
   drillLogo: NotebookIcon,
   drillName: "Speed Assesment Test",
@@ -168,7 +176,7 @@ export const speedAssesmentIntroData = {
     },
   ],
   drillWorking:
-    "explain the working of the drill in detail here, how it helps in improving the speed and accuracy of the students.",
+    "A 5-minute drill where you quickly assess GATE questions and decide whether to solve, skip, or review later using simple swipes. Each decision is later validated through actual practice, building your exam strategy.",
   drillFeatures: [
     {
       featureLogo: Clock,
@@ -190,6 +198,128 @@ export const speedAssesmentIntroData = {
     },
   ],
 };
+export const answerEliminationIntroData = {
+  drillLogo: FilterIcon,
+  drillName: "Answer Elimination",
+  drillDescription: "Train your GATE instincts.",
+  drillDetails: [
+    {
+      detailLogo: Clock,
+      detailName: "5 mins",
+    },
+    {
+      detailLogo: NotebookPenIcon,
+      detailName: "10 questions",
+    },
+  ],
+  drillWorking:"A 5-minute drill where you quickly assess GATE questions and decide whether to solve, skip, or review later using simple swipes. Each decision is later validated through actual practice, building your exam strategy.",
+  drillFeatures: [
+    {
+      featureLogo: Clock,
+      featureName: "Master time management",
+      featureDescription:
+        "Practice making quick decision on questions in a timed environment.",
+    },
+    {
+      featureLogo: Pause,
+      featureName: "Save precious exam minutes",
+      featureDescription:
+        "Take a timed test to simulate exam conditions and improve your speed.",
+    },
+    {
+      featureLogo: ThumbsUp,
+      featureName: "Make a smarter question choice",
+      featureDescription:
+        " Learn to decode question patterns and pick the right one to solve.",
+    },
+  ],
+};
+
+export const calculatorEfficiencyIntroData = {
+  drillLogo: CalculatorIcon,
+  drillName: "Calculator Efficiency",
+  drillDescription: "Train your GATE instincts.",
+  drillDetails: [
+    {
+      detailLogo: Clock,
+      detailName: "5 mins",
+    },
+    {
+      detailLogo: NotebookPenIcon,
+      detailName: "10 questions",
+    },
+  ],
+  drillWorking:
+    "A 5-minute drill where you quickly assess GATE questions and decide whether to solve, skip, or review later using simple swipes. Each decision is later validated through actual practice, building your exam strategy.",
+  drillFeatures: [
+    {
+      featureLogo: Clock,
+      featureName: "Master time management",
+      featureDescription:
+        "Practice making quick decision on questions in a timed environment.",
+    },
+    {
+      featureLogo: Pause,
+      featureName: "Save precious exam minutes",
+      featureDescription:
+        "Take a timed test to simulate exam conditions and improve your speed.",
+    },
+    {
+      featureLogo: ThumbsUp,
+      featureName: "Make a smarter question choice",
+      featureDescription:
+        " Learn to decode question patterns and pick the right one to solve.",
+    },
+  ],
+};
+
+export const accuracyVsSpeedIntroData = {
+  drillLogo: TimerIcon,
+  drillName: "Accuracy vs Speed",
+  drillDescription: "Train your GATE instincts.",
+  drillDetails: [
+    {
+      detailLogo: Clock,
+      detailName: "5 mins",
+    },
+    {
+      detailLogo: NotebookPenIcon,
+      detailName: "10 questions",
+    },
+  ],
+  drillWorking:
+    "A 5-minute drill where you quickly assess GATE questions and decide whether to solve, skip, or review later using simple swipes. Each decision is later validated through actual practice, building your exam strategy.",
+  drillFeatures: [
+    {
+      featureLogo: Clock,
+      featureName: "Master time management",
+      featureDescription:
+        "Practice making quick decision on questions in a timed environment.",
+    },
+    {
+      featureLogo: Pause,
+      featureName: "Save precious exam minutes",
+      featureDescription:
+        "Take a timed test to simulate exam conditions and improve your speed.",
+    },
+    {
+      featureLogo: ThumbsUp,
+      featureName: "Make a smarter question choice",
+      featureDescription:
+        " Learn to decode question patterns and pick the right one to solve.",
+    },
+  ],
+};
+
+
+
+
+
+
+
+
+
+
 
 type QuestionType =
   | "singleCorrect"

@@ -6,6 +6,9 @@ import { Signin, Signup } from "./components/pages/auth";
 import { LandingPage,Pricing, OurStory } from "./components/pages/landing";
 import { NotFound } from "./components/shared/components";
 import Onboarding from "./components/pages/onboarding/Onboarding";
+import AnswerElimination from "./components/pages/drills/answerElimination/AnswerElimination";
+import AccuracyVsSpeed from "./components/pages/drills/accuracySpeed/AccuracyVsSpeed";
+import CalculatorEfficiency from "./components/pages/drills/calculatorEfficiency/CalculatorEfficiency";
 const App = () => {
   return (
     <div>
@@ -21,6 +24,9 @@ const App = () => {
           {/* Protected */}
           <Route path="/drills" element={<DrillsHome />} />
           <Route path="/drills/speed-assesment-test" element={<SpeedAssessmentTest/>}/>
+          <Route path="/drills/answer-elimination" element={<AnswerElimination/>}/>
+          <Route path="/drills/accuracy-vs-speed" element={<AccuracyVsSpeed />} />
+          <Route path="/drills/calculator-efficiency" element={<CalculatorEfficiency />} />
           <Route path="/tasks" element={<TasksHome />} />
           <Route path="/dashboard" element={<DashboardHome />} />
           <Route path="/onboarding" element={<Onboarding />} />
