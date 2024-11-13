@@ -1,0 +1,109 @@
+
+  .button-calc {
+    border: none;
+    outline: none;
+    appearance: none;
+    background: transparent;
+    color: inherit;
+  }
+  
+  
+  .developer span {
+    font-weight: 600;
+    color: #ff4800;
+  }
+  
+  .calculator {
+    max-width: fit-content;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: white;
+  }
+  
+  .displayWindow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    flex-direction: column;
+  }
+  
+  .displayWindow .expression {
+    overflow-x: auto;
+    width: 100%;
+    text-align: right;
+    scrollbar-width: none;
+  }
+  
+  
+  .keysWindow {
+    display: flex;
+  }
+  
+  .keysWindow button {
+    /* padding: 1rem 1rem; */
+    /* font-size: 1.6rem; */
+    cursor: pointer;
+    /* color: #a1a1a1; */
+    /* border-radius: 15px; */
+    font-weight: 300;
+  }
+  
+  /* .keysWindow button:hover {
+    background-color: #161616;
+  } */
+  
+  .keys_scientific {
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .line {
+    margin-block: 1.5rem;
+    width: 1epx;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .keys_basic {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 1rem; */
+  }
+  
+  .keys_basic .equal {
+    /* background-color: #f36c13; */
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  
+  .keys_basic .number {
+    /* color: white; */
+    font-weight: 600;
+  }
+  
+  @media (max-width: 610px) {
+    body {
+      padding: 1rem;
+    }
+    .calculator {
+      max-width: fit-content;
+    }
+  
+    .keysWindow {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .line {
+      display: none;
+    }
+  
+    .keys_scientific {
+      width: 100%;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+

@@ -43,4 +43,34 @@ export interface DrillIntroData {
     drillDetails: DrillDetail[];
     drillWorking: string;
     drillFeatures: DrillFeature[];
+    drillStart: () => void;
+}
+
+export interface Question {
+  id: number,
+  question: string,
+  options: string[],
+}
+
+export type QuestionStatusSpeedTest = "notReached" | "attempted" | "skipped" | "saveForLater";
+
+export interface TestScreenProps{
+  questions: Question[],
+  handleEndTest: () => void;
+}
+
+export interface MainPanelProps {
+  question: Question;
+  onSkip: () => void;
+  onSaveForLater: () => void;
+  onNext: () => void;
+  timeLeft: number;
+  questionsAttempted: number;
+}
+
+export interface QuestionPanelProps {
+  questions: Question[];
+  questionStatus: Record<number, QuestionStatusSpeedTest>;
+  onQuestionSelect: (id: number) => void;
+  selectedQuestionId: number;
 }

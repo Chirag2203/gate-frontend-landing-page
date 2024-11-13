@@ -1,9 +1,9 @@
 import DrillsHome from "./DrillsHome";
-import SpeedAssesmentTest from "./SpeedAssesmentTest";
+import SpeedAssessmentTest from "./speedAssesment/SpeedAssessmentTest";
 import DrillsIntro from "./DrillsIntro";
 
 export {
     DrillsHome,
-    SpeedAssesmentTest,
+    SpeedAssessmentTest,
     DrillsIntro
 }

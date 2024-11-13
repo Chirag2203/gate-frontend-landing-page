@@ -191,6 +191,154 @@ export const speedAssesmentIntroData = {
   ],
 };
 
+type QuestionType =
+  | "singleCorrect"
+  | "multiCorrect"
+  | "integer"
+  | "fillInTheBlanks";
+
+interface AssessmentQuestion {
+  id: number;
+  question: string;
+  options: string[];
+  type: QuestionType;
+}
+
+export const AssessmentQuestions: AssessmentQuestion[] = [
+  {
+    id: 1,
+    question: "What is the time complexity of binary search?",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(n^2)"],
+    type: "singleCorrect",
+  },
+  {
+    id: 2,
+    question:
+      "In probability, if two events A and B are independent, then P(A ∩ B) is:",
+    options: ["P(A) * P(B)", "P(A) + P(B)", "P(A) - P(B)", "P(A) / P(B)"],
+    type: "singleCorrect",
+  },
+  {
+    id: 3,
+    question:
+      "Which of the following is a primary key in relational database design?",
+    options: [
+      "Unique column identifier",
+      "Non-unique column",
+      "Foreign key",
+      "Indexed column",
+    ],
+    type: "multiCorrect",
+  },
+  {
+    id: 4,
+    question:
+      "In a control system, the transfer function represents the relation between:",
+    options: [
+      "Input and output",
+      "Time and frequency",
+      "Current and voltage",
+      "Feedback and input",
+    ],
+    type: "multiCorrect",
+  },
+  {
+    id: 5,
+    question: "The Laplace transform of a unit step function is:",
+    options: ["1/s", "s", "1", "s^2"],
+    type: "singleCorrect",
+  },
+  {
+    id: 6,
+    question:
+      "Which of the following scheduling algorithms could result in starvation?",
+    options: [
+      "Round Robin",
+      "First Come First Serve",
+      "Shortest Job Next",
+      "Multilevel Queue",
+    ],
+    type: "singleCorrect",
+  },
+  {
+    id: 7,
+    question:
+      "In C programming, which of the following is used to define a constant?",
+    options: ["#include", "int", "#define", "void"],
+    type: "singleCorrect",
+  },
+  {
+    id: 8,
+    question: "The Fourier series is used to analyze which type of signals?",
+    options: ["Periodic", "Aperiodic", "Stochastic", "Complex"],
+    type: "singleCorrect",
+  },
+  {
+    id: 9,
+    question: "In thermodynamics, entropy is a measure of:",
+    options: ["Temperature", "Pressure", "Disorder", "Energy"],
+    type: "singleCorrect",
+  },
+  {
+    id: 10,
+    question: "Which of the following is not a property of a linear system?",
+    options: ["Homogeneity", "Superposition", "Memoryless", "Nonlinearity"],
+    type: "singleCorrect",
+  },
+  {
+    id: 11,
+    question: "What is the main purpose of a Zener diode in a circuit?",
+    options: [
+      "Amplification",
+      "Rectification",
+      "Voltage regulation",
+      "Signal modulation",
+    ],
+    type: "singleCorrect",
+  },
+  {
+    id: 12,
+    question:
+      "In object-oriented programming, encapsulation is achieved using:",
+    options: [
+      "Classes and objects",
+      "Inheritance",
+      "Polymorphism",
+      "Abstraction",
+    ],
+    type: "singleCorrect",
+  },
+  {
+    id: 13,
+    question:
+      "Which one of the following methods is used to solve linear equations?",
+    options: [
+      "Gaussian Elimination",
+      "Euler’s Method",
+      "Runge-Kutta Method",
+      "Newton-Raphson Method",
+    ],
+    type: "singleCorrect",
+  },
+  {
+    id: 14,
+    question: "In digital electronics, the output of an XOR gate is HIGH if:",
+    options: [
+      "Both inputs are LOW",
+      "Both inputs are HIGH",
+      "The inputs are the same",
+      "The inputs are different",
+    ],
+    type: "singleCorrect",
+  },
+  {
+    id: 15,
+    question: "The gradient of a scalar field is a:",
+    options: ["Scalar", "Vector", "Tensor", "Matrix"],
+    type: "singleCorrect",
+  },
+];
+
 export const avatarData = [
   {
     id: 1,
