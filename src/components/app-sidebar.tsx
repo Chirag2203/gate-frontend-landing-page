@@ -1,171 +1,68 @@
-import * as React from "react"
-import {
-  BookOpen,
-  Frame,
-  GalleryVerticalEnd,
-  ListCheck,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
+import * as React from "react";
 
-import { NavMain } from "@/components/nav-main"
-// import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from "@/components/nav-main";
+import { NavUser } from "@/components/nav-user";
+import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
-} from "@/components/ui/sidebar"
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  // SidebarRail,
+} from "@/components/ui/sidebar";
+import {TbArrowRampRight3 } from "react-icons/tb";
+import { navdata } from "@/constants/navbar";
 
-// This is sample data.
-const data = {
-  user: {
-    name: "Chirag Rajput",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: {
-    
-      name: "MentaraAi",
-      logo: GalleryVerticalEnd,
-      plan: "Free Plan",
-    },
-  
-  navMain: [
-    {
-      title: "Dashbaord",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "Overview",
-          url: "#",
-        },
-        {
-          title: "Activity",
-          url: "#",
-        },
-        {
-          title: "Performance",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Tasks",
-      url: "#",
-      icon: ListCheck,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Lessons",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        
-      ],
-    },
-    {
-      title: "Drills",
-      url: "/drills",
-      icon: PieChart,
-      items: [
-        {
-          title: "Speed Assesment",
-          url: "/drills/speed-assesment",
-        },
-        {
-          title: "Answer Elimination",
-          url: "/drills/answer-elimination",
-        },
-        {
-          title: "Accuracy vs Speed",
-          url: "/drills/accuracy-vs-speed",
-        },
-        {
-          title: "Time-Bound Sets",
-          url: "/drills/time-bound-sets",
-        },
-        {
-          title: "Calculator Efficiency",
-          url: "/drills/calculator-efficiency",
-        },
-        
-      ],
-    },
-    {
-      title: "Settings",
-      url: "/settings",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "/settings/general",
-        },
-        {
-          title: "Billing",
-          url: "/settings/billing",
-        },
-        
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
-}
+export function AppSidebar({
+  toggleSidebarMain,
+  isOpen,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & {
+  toggleSidebarMain: () => void;
+  isOpen: boolean;
+}) {
+  // State to manage sidebar open/close
+  const [isSideBarOpen, setIsSideBarOpen] = React.useState<boolean>(
+    localStorage.getItem("isSidebarOpen") !== "false" 
+  );
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  // Sync with localStorage whenever state changes
+  React.useEffect(() => {
+    localStorage.setItem("isSidebarOpen", isSideBarOpen.toString());
+  }, [isSideBarOpen]);
+
+  // Toggle function for opening/closing sidebar
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher teams={navdata.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
+        <NavMain items={navdata.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+            {/* Toggle button to open/close sidebar */}
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              onClick={() => {
+                toggleSidebarMain();
+                setIsSideBarOpen(!isSideBarOpen);
+              }}
+              className="toggle-button"
+            >
+              {isSideBarOpen ? <>
+                <TbArrowRampRight3 /> Close sidebar</>: <TbArrowRampRight3 />}
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+        <NavUser user={navdata.user} />
       </SidebarFooter>
-      <SidebarRail />
+      {/* <SidebarRail /> */}
     </Sidebar>
-  )
+  );
 }

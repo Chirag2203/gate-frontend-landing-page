@@ -1,6 +1,16 @@
 import { AppSidebar } from "@/components/app-sidebar";
-const DashboardSidebar = () => {
-  return <AppSidebar />;
+const DashboardSidebar = ({
+  toggleSidebar,
+  isOpen,
+}:  {
+  toggleSidebar: () => void;
+  isOpen: boolean;
+}) => {
+  return <AppSidebar
+    isOpen={isOpen}
+    toggleSidebarMain={toggleSidebar}
+  
+  />;
 };
 
 export default DashboardSidebar;

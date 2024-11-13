@@ -15,7 +15,7 @@ const DrillsHome = () => {
           </p>
         </div>
         <DrillsStats statsData={statsData} />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-8">
           {drillsCardData.map((drill, index) => (
             <DrillsCard
               drillName={drill.drillName}
