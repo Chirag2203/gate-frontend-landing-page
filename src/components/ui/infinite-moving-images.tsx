@@ -1,3 +1,6 @@
+// Usage: <InfiniteMovingCards items={items} direction="left" speed="fast" pauseOnHover={true} className="h-24" />
+// used on landing page for infinite moving images
+
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 

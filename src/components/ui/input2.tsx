@@ -1,4 +1,5 @@
 // Input2 component extends from shadcnui - https://ui.shadcn.com/docs/components/input
+// this has a border effect on hover
 "use client";
 import * as React from "react";
 import { cn } from "@/lib/utils";
