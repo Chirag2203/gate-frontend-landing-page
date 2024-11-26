@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="flex sm:items-center items-start">
           <div className="flex sm:gap-8 gap-4 sm:flex-row flex-col">
             <p className="text-sm text-gray-200">
-              © {new Date().getFullYear()} Kalppo.{" "}
+              © {new Date().getFullYear()}  MGSR Technologies{" "}
               <br className="sm:hidden block" /> All rights reserved.
             </p>
             <div className="flex  gap-1 items-end">
