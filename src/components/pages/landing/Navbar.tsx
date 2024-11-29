@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-// import logo from "@/assets/logo.png";
+import logo from "/logo.png";
 // import { navItems } from "../../../constants/index.js";
 // import { Button } from "@/components/ui/button.js";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to={"/"}>
             <div className="flex items-center flex-shrink-0">
-              {/* <img className="h-10 w-10 mr-2" src={logo} alt="Logo" /> */}
+              <img className="h-7 w-7" src={logo} alt="Logo" />
               <span className="text-xl  font-semibold text-primary">
                 Kalppo
               </span>
