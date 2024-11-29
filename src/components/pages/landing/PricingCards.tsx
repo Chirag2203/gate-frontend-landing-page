@@ -92,7 +92,7 @@ const PricingCards = () => {
                   </li>
                 </ul>
               </div>
-              <Link to="/join-waitlist">
+              <Link to="/waitlist">
                <Button variant={"blueGradient"} className="w-full" >
                   Join the waitlist <MdKeyboardArrowRight />
                 </Button></Link>
@@ -197,7 +197,7 @@ const PricingCards = () => {
                 </ul>
               </div>
               <div className="w-full flex flex-col -mb-5 gap-1">
-               <Link to="/join-waitlist">
+               <Link to="/waitlist">
                <Button variant={"blueGradient"} className="w-full" >
                   Join the waitlist <MdKeyboardArrowRight />
                 </Button></Link>
@@ -351,7 +351,7 @@ const PricingCards = () => {
                 </ul>
               </div>
               <div className="w-full flex flex-col -mb-5 gap-1">
-              <Link to="/join-waitlist">
+              <Link to="/waitlist">
                <Button variant={"blueGradient"} className="w-full" >
                   Join the waitlist <MdKeyboardArrowRight />
                 </Button></Link>

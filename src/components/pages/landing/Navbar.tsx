@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to={"/our-story"} className="text-primary font-medium">
               Out Story
             </Link>
-            <Link to="/signin">
+            <Link to="https://app.kalppo.com/signin">
               <button className="button-login px-4 py-2 rounded-full ml-4 font-medium">
                 Sign in{" "}
                 <div className="arrow-wrapper">
@@ -70,7 +70,7 @@ const Navbar = () => {
               Out Story
             </Link>
             <div className="flex space-x-6 ">
-              <Link to="/signin">
+              <Link to="https://app.kalppo.com/signin">
                 <button className="button-login px-4 py-2 rounded-full font-medium">
                   Sign in{" "}
                   <div className="arrow-wrapper">

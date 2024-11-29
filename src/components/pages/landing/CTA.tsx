@@ -36,7 +36,7 @@ const CTA = () => {
         <p className=" sm:text-xl sm:text-left text-center">
           Transform your GATE preparation with personalised AI guidance
         </p>
-        <Link to={"/drills"}>
+        <Link to={"/waitlist"}>
           <Button className="rounded-full text-primary px-7 sm:mt-4 mt-0 bg-gradient-to-b hover:to-gray-200 transition-colors from-white to-white text-md py-5">
           Join the waitlist
             {/* <HiArrowUpRight /> */}

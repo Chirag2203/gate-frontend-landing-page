@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="flex flex-col sm:items-end mb-4 gap-4 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
               
 
-              <Link to={"/support"}>
+              <Link to={"/waitlist"}>
                 <Button className="bg-white rounded-full hover:border hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
                 Join the waitlist <HiArrowUpRight />
                 </Button>
