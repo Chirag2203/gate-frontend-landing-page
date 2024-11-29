@@ -35,7 +35,7 @@ const HeroSection = () => {
       <h1 className="max-w-7xl px-6 text-4xl sm:text-6xl lg:text-7xl text-center font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
         Supercharge your GATE preparation
       </h1>
-      <p className="sm:mt-8 sm:text-xl text-lg text-center text-neutral-700 max-w-xs sm:max-w-2xl">
+      <p className="sm:mt-8 sm:text-xl text-md text-center text-neutral-700 max-w-xs sm:max-w-2xl">
         Revise smarter, practice strategically, and conqqer your weak areas with{" "}
         personalised AI guidance.
       </p>
