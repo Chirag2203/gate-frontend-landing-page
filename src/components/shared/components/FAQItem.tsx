@@ -19,7 +19,7 @@ const FAQItem = ({ faqData }:
           onClick={() => {
             handleFaqToggle(id);
           }}
-          className="flex text-left border-b  text-xl cursor-pointer items-center justify-between  py-5  font-medium  dark:text-white lg:py-4"
+          className="flex text-left border-b   cursor-pointer items-center justify-between  py-5  font-medium  dark:text-white lg:py-4 sm:text-xl text-md "
         >
           {quest}
 
@@ -52,7 +52,7 @@ const FAQItem = ({ faqData }:
           )}
         </button>
         <p
-          className={` text-gray-700 py-5 dark:border-strokedark lg:py-4 sm:w-5/6  ${
+          className={` text-gray-700 py-5 dark:border-strokedark lg:py-4 sm:w-5/6 sm:text-lg text-md ${
             activeFaq === id ? "block" : "hidden"
           }`}
         >
