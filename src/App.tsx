@@ -6,11 +6,13 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Terms from "./components/pages/Terms";
 import Privacy from "./components/pages/Privacy";
+import ScrollToTop from "./components/shared/ScrollToTop";
 const App = () => {
   return (
     <div>
       <ToastContainer />
       <Router>
+      <ScrollToTop />
         <Routes>
           {/* Public */}
           <Route path="/" element={<LandingPage/>} />
