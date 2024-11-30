@@ -30,7 +30,7 @@ const FeatureSection = () => {
         </p>
         <p className="sm:text-lg text-neutral-500 mt-4 max-w-xl text-center">
           Turn your revisions into results with AI-powered drills, smart
-          flashcaeds and personalised weak area analysis.
+          flashcards and personalized weak area analysis.
         </p>
       </motion.div>
       <div className="w-full flex sm:flex-row flex-col mt-16 justify-between items-center">

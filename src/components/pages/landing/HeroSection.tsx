@@ -36,7 +36,7 @@ const HeroSection = () => {
         Supercharge your GATE preparation
       </h1>
       <p className="sm:mt-8 sm:text-xl text-md text-center text-neutral-700 max-w-xs sm:max-w-2xl">
-        Revise smarter, practice strategically, and conqqer your weak areas with{" "}
+        Revise smarter, practice strategically, and conquer  your weak areas with{" "}
         personalised AI guidance.
       </p>
       <div className="flex flex-col gap-2 items-center justify-center my-10">

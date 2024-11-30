@@ -7,17 +7,18 @@ import { cn } from "@/lib/utils";
 import { Input2 } from "@/components/ui/input2";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import { NotebookIcon, RocketIcon, Sparkles } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
 const Waitlist = () => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
   const [userData, setUserData] = React.useState({
@@ -25,7 +26,7 @@ const Waitlist = () => {
     phoneNumber: "",
     branch: "",
     preparationStatus: "",
-    mostHelpNeededWith: "",
+    mostHelpNeededWith: [] as string[],
   });
   const [loading, setLoading] = React.useState(false);
 
@@ -41,7 +42,7 @@ const Waitlist = () => {
             phoneNumber: userData.phoneNumber,
             branch: userData.branch,
             preparationStatus: userData.preparationStatus,
-            needHelpWith: [userData.mostHelpNeededWith],
+            needHelpWith: userData.mostHelpNeededWith,
           },
         },
         {
@@ -58,6 +59,56 @@ const Waitlist = () => {
       setLoading(false);
     }
   };
+
+  const preperationStatusOptions = [
+    {
+      value: "Completed Syllabus, taking mocks",
+      label: "Completed Syllabus, taking mocks",
+    },
+    {
+      value: "Finished Syllabus, started subject tests",
+      label: "Finished Syllabus, started subject tests",
+    },
+    { value: "Still covering syllabus", label: "Still covering syllabus" },
+    { value: "Just starting preparation", label: "Just starting preparation" },
+  ];
+
+  const branchOptions = [
+    { value: "Mechanical", label: "Mechanical" },
+    { value: "Civil", label: "Civil" },
+    { value: "CSE", label: "CSE" },
+    { value: "DA", label: "DA" },
+    { value: "Electrical", label: "Electrical" },
+    { value: "Electronics", label: "Electronics" },
+    { value: "Others", label: "Others" },
+  ];
+  const helpOptions = [
+    {
+      value: "Running out of time during tests despite knowing concepts",
+      label: "Running out of time during tests despite knowing concepts",
+    },
+    {
+      value: "Struggle to retain concepts during revision",
+      label: "Struggle to retain concepts during revision",
+    },
+    {
+      value: "Keep losing marks in topics I thought I mastered",
+      label: "Keep losing marks in topics I thought I mastered",
+    },
+    {
+      value: "Mock test scores aren't reflecting my preparation",
+      label: "Mock test scores aren't reflecting my preparation",
+    },
+    {
+      value: "Need structure in these crucial final months",
+      label: "Need structure in these crucial final months",
+    },
+    {
+      value: "Want more quality practice, beyond basic questions",
+      label: "Want more quality practice, beyond basic questions",
+    },
+  ];
+  const animatedComponents = makeAnimated();
 
   const LabelInputContainer = ({
     children,
@@ -108,7 +159,7 @@ const Waitlist = () => {
                   <Label htmlFor="name">Name</Label>
                   <Input2
                     id="name"
-                    placeholder="Avianash Kumar"
+                    placeholder="Name"
                     type="text"
                     value={userData.name}
                     onChange={(e) =>
@@ -121,108 +172,80 @@ const Waitlist = () => {
                 <Label htmlFor="phoneNumber">Mobile number</Label>
                 <Input2
                   id="phoneNumber"
-                  placeholder="9089097128"
+                  placeholder="90XXXXX128"
                   type="mobile"
                   value={userData.phoneNumber}
                   onChange={(e) =>
                     setUserData({ ...userData, phoneNumber: e.target.value })
                   }
+                  maxLength={10}
                 />
               </div>
               <LabelInputContainer className="mb-6">
                 <Label htmlFor="branch">Branch</Label>
                 <Select
-                  value={userData.branch}
-                  onValueChange={(value) =>
-                    setUserData({ ...userData, branch: value })
+                  closeMenuOnSelect={true}
+                  placeholder="Select branch"
+                  className="text-sm"
+                  components={animatedComponents}
+                  options={branchOptions}
+                  value={branchOptions.find(
+                    (option) => option.value === userData.branch
+                  )}
+                  onChange={(value) =>
+                    setUserData({
+                      ...userData,
+                      branch: (value as { value: string }).value,
+                    })
                   }
-                >
-                  <SelectTrigger className="bg-gray-100 border-none placeholder:text-gray-100">
-                    <SelectValue
-                      placeholder="Select Branch"
-                      className="text-xs text-gray-300"
-                    />
-                  </SelectTrigger>
-                  <SelectContent className="bg-gray-100 border-none">
-                    <SelectItem value="Mechanical">Mechanical</SelectItem>
-                    <SelectItem value="Civil">Civil</SelectItem>
-                    <SelectItem value="CSE">CSE</SelectItem>
-                    <SelectItem value="DA">DA</SelectItem>
-                    <SelectItem value="Electrical">Electrical</SelectItem>
-                    <SelectItem value="Electronics">Electronics</SelectItem>
-                    <SelectItem value="Others">Others</SelectItem>
-                  </SelectContent>
-                </Select>
+                />
               </LabelInputContainer>
               <LabelInputContainer className="mb-6">
                 <Label htmlFor="preparationStatus">
                   Current preparation status
                 </Label>
                 <Select
-                  value={userData.preparationStatus}
-                  onValueChange={(value) =>
-                    setUserData({ ...userData, preparationStatus: value })
+                  closeMenuOnSelect={true}
+                  placeholder="Select status"
+                  className="text-sm"
+                  components={animatedComponents}
+                  options={preperationStatusOptions}
+                  value={preperationStatusOptions.find(
+                    (option) => option.value === userData.preparationStatus
+                  )}
+                  onChange={(value) =>
+                    setUserData({
+                      ...userData,
+                      preparationStatus: (value as { value: string }).value,
+                    })
                   }
-                >
-                  <SelectTrigger className="bg-gray-100 border-none">
-                    <SelectValue
-                      placeholder="Select preparation status"
-                      className="text-xs text-gray-300"
-                    />
-                  </SelectTrigger>
-                  <SelectContent className="bg-gray-100 border-none">
-                    <SelectItem value="beginner">
-                      Completed Syllabus, taking mocks
-                    </SelectItem>
-                    <SelectItem value="intermediate">
-                      Finished Syllabus, started subject tests
-                    </SelectItem>
-                    <SelectItem value="advanced">
-                      Still covering syllabus
-                    </SelectItem>
-                    <SelectItem value="advanced">
-                      Just starting preparation
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+                />
               </LabelInputContainer>
               <LabelInputContainer className="mb-6">
                 <Label htmlFor="mostHelpNeededWith">
                   What do you need most help with
                 </Label>
                 <Select
-                  value={userData.mostHelpNeededWith}
-                  onValueChange={(value) =>
-                    setUserData({ ...userData, mostHelpNeededWith: value })
+                  placeholder="Select all that apply"
+                  className="text-sm"
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  isMulti
+                  options={helpOptions}
+                  value={helpOptions.filter((option) =>
+                    userData.mostHelpNeededWith?.includes(option.value)
+                  )}
+                  onChange={(value) =>
+                    setUserData({
+                      ...userData,
+                      mostHelpNeededWith: [
+                        ...(value as unknown as { value: string }[]).map(
+                          (v) => v.value
+                        ),
+                      ],
+                    })
                   }
-                >
-                  <SelectTrigger className="bg-gray-100 border-none">
-                    <SelectValue
-                      placeholder="Select type of help you are looking for"
-                      className="text-xs text-gray-300"
-                    />
-                  </SelectTrigger>
-                  <SelectContent className="bg-gray-100 border-none">
-                    <SelectItem value="Running out of time during tests despite knowing concepts">
-                      Running out of time during tests despite knowing concepts
-                    </SelectItem>
-                    <SelectItem value="Struggle to retain concepts during revision">
-                      Struggle to retain concepts during revision
-                    </SelectItem>
-                    <SelectItem value="Keep losing marks in topics I thought I mastered">
-                      Keep losing marks in topics I thought I mastered
-                    </SelectItem>
-                    <SelectItem value="Mock test scores aren't reflecting my preparation">
-                      Mock test scores aren't reflecting my preparation
-                    </SelectItem>
-                    <SelectItem value="Need structure in these crucial final months">
-                      Need structure in these crucial final months
-                    </SelectItem>
-                    <SelectItem value="Want more quality practice, beyond basic questions">
-                      Want more quality practice, beyond basic questions
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+                />
               </LabelInputContainer>
 
               <Button
