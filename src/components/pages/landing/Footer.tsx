@@ -17,7 +17,6 @@ const Footer = () => {
           >
             <span className="sm:text-3xl text-xl flex items-baseline font-semibold whitespace-nowrap dark:text-white ">
               Kalppo
-             
             </span>
             <p className="text-sm text-gray-200 sm:mt-1  ">
               Making Learning Easy
@@ -25,11 +24,9 @@ const Footer = () => {
           </Link>
           <div className="flex flex-col sm:items-end gap-4 sm:mt-0 mt-4">
             <ul className="flex flex-col sm:items-end mb-4 gap-4 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
-              
-
               <Link to={"/waitlist"}>
                 <Button className="bg-white rounded-full hover:border hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
-                Join the waitlist <HiArrowUpRight />
+                  Join the waitlist <HiArrowUpRight />
                 </Button>
               </Link>
               <div className="flex flex-col sm:items-end ">
@@ -43,22 +40,9 @@ const Footer = () => {
         <div className="flex sm:items-center items-start">
           <div className="flex sm:gap-8 gap-4 sm:flex-row flex-col">
             <p className="text-sm text-gray-200">
-              © {new Date().getFullYear()}  MGSR Technologies{" "}
+              © {new Date().getFullYear()} MGSR Technologies{" "}
               <br className="sm:hidden block" /> All rights reserved.
             </p>
-            <div className="flex  gap-1 items-end">
-              <Link to={"/privacy-policy"}>
-                <p className="text-sm text-gray-200 hover:text-white">
-                  Privacy Policy{" "}
-                </p>
-              </Link>
-              <LuDot />
-              <Link to={"/terms"}>
-                <p className="text-sm text-gray-200 hover:text-white">
-                  Terms & Conditions
-                </p>
-              </Link>
-            </div>
           </div>
           <div className="flex items-center gap-4 sm:mt-0 mt-2 ml-auto">
             {/* <a href="https://www.instagram.com/mentarahq?igsh=MWNsejVoMXNoamU2bg%3D%3D&utm_source=qr">
@@ -74,6 +58,28 @@ const Footer = () => {
               <IoLogoWhatsapp className="text-2xl text-gray-200" />
             </a> */}
           </div>
+        </div>
+        <div className="sm:flex  gap-2 sm:items-end sm:mt-2 mt-4 grid grid-cols-2">
+          <Link to={"/privacy-policy"} target="_blank">
+            <p className="text-sm text-gray-200 hover:text-white">
+              Privacy Policy{" "}
+            </p>
+          </Link>
+          <LuDot className="sm:block hidden"/>
+          <Link to={"/terms"} target="_blank">
+            <p className="text-sm text-gray-200 hover:text-white">
+              Terms & Conditions
+            </p>
+          </Link>
+          <LuDot  className="sm:block hidden"/>
+          <Link to={"/refund-policy"} target="_blank">
+            <p className="text-sm text-gray-200 hover:text-white">Refund Policy</p>
+          </Link>
+          <LuDot  className="sm:block hidden"/>
+          <Link to={"/contact"} target="_blank">
+            <p className="text-sm text-gray-200 hover:text-white">Contact Us</p>
+          </Link>
+
         </div>
       </div>
     </footer>

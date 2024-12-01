@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Terms from "./components/pages/Terms";
 import Privacy from "./components/pages/Privacy";
 import ScrollToTop from "./components/shared/ScrollToTop";
+import Refund from "./components/pages/Refund";
+import Contact from "./components/pages/Contact";
 const App = () => {
   return (
     <div>
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/privacy-policy" element={<Privacy/>} />
           <Route path="/terms" element={<Terms/>} />
+          <Route path="/refund-policy" element={<Refund />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route path="*" element={<NotFound/>} />
         </Routes>
