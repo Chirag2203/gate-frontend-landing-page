@@ -6,20 +6,59 @@ import { cn } from "@/lib/utils";
 
 import { Input2 } from "@/components/ui/input2";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
 import { NotebookIcon, RocketIcon, Sparkles } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import OTPcomponent from "@/components/shared/OTPcomponent";
+import { branchOptions, helpOptions, preperationStatusOptions } from "@/constants/data";
+
+const BASE_URL = "https://kalppo-backend.vercel.app/auth/otp";
+
+export const sendOtp = async (phoneNumber: string): Promise<void> => {
+  try {
+    const response = await axios.post(`${BASE_URL}/send`, { phoneNumber });
+    console.log("OTP sent successfully:", response.data);
+  } catch (error: any) {
+    console.error("Error sending OTP:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+export const verifyOtp = async (
+  otp: string,
+  phoneNumber: string
+): Promise<void> => {
+  try {
+    const response = await axios.post(`${BASE_URL}/verify`, {
+      otp: otp,
+      phoneNumber: phoneNumber,
+    });
+    console.log("OTP verified successfully:", response.data);
+    localStorage.setItem("token", response.data.jwtToken);
+  } catch (error: any) {
+    console.error(
+      "Error verifying OTP:",
+      error.response?.data || error.message
+    );
+    throw error;
+  }
+};
+
+
+/*
+steps for waitlist form submission
+1. User enters name, phone number, branch, preparation status, most help needed with
+2. User clicks on "Join Waitlist"
+3. User receives OTP on phone number
+4. User enters OTP
+5. User clicks on "Verify OTP"
+6. User data is submitted to backend
+*/
+
 const Waitlist = () => {
+  const [loadingVerify, setLoadingVerify] = React.useState(false);
   const [formSubmitted, setFormSubmitted] = React.useState(false);
   const [userData, setUserData] = React.useState({
     name: "",
@@ -30,84 +69,88 @@ const Waitlist = () => {
   });
   const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSendOtp = async () => {
+    if (userData.phoneNumber.length !== 10) {
+      toast.error("Please enter a valid 10 digit mobile number");
+      return;
+    };
+    try {
+      setLoading(true);
+      await sendOtp(userData.phoneNumber);
+      toast.success("OTP sent successfully!");
+    } catch {
+      console.error("Failed to send");
+      toast.error("Failed to send OTP");
+    } finally{
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyMobile = async (otp: string) => {
+
+    try {
+      setLoadingVerify(true);
+      await verifyOtp(otp, userData.phoneNumber); 
+      toast.success("OTP verified successfully!");
+      handleSubmit(      );
+    } catch {
+      console.error("Failed to verify");
+      toast.error("Failed to verify OTP");
+    } finally{
+      setLoadingVerify(false);
+    }
+  };
+
+  const handleSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://kalppo-backend.vercel.app/auth/register",
-        {
-          user: {
-            name: userData.name,
-            phoneNumber: userData.phoneNumber,
-            branch: userData.branch,
-            preparationStatus: userData.preparationStatus,
-            needHelpWith: userData.mostHelpNeededWith,
-          },
+      const profileData = {
+        user: {
+          name: userData.name,
+          phoneNumber: userData.phoneNumber,
+          branch: userData.branch,
+          preparationStatus: userData.preparationStatus,
+          needHelpWith: userData.mostHelpNeededWith,
+          initialSource: "waitlist_form",
         },
+        fieldMask: {
+          paths: [
+            "name",
+            "phoneNumber",
+            "branch",
+            "aspirantType",
+            "preparationStatus",
+            "needHelpWith",
+            "initialSource",
+          ],
+        },
+      };
+  
+      const registerResponse = await axios.patch(
+        "https://kalppo-backend.vercel.app/users/updateProfile",
+        profileData,
         {
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
-      console.log("Success:", response);
+  
+      console.log("User Registered Successfully:", registerResponse.data);
       toast.success("Form submitted successfully");
       setFormSubmitted(true);
+  
     } catch (error) {
       console.error("Error:", error);
       toast.error("Error submitting form, please try again later");
     } finally {
       setLoading(false);
+      localStorage.removeItem("token");
     }
   };
 
-  const preperationStatusOptions = [
-    {
-      value: "Completed Syllabus, taking mocks",
-      label: "Completed Syllabus, taking mocks",
-    },
-    {
-      value: "Finished Syllabus, started subject tests",
-      label: "Finished Syllabus, started subject tests",
-    },
-    { value: "Still covering syllabus", label: "Still covering syllabus" },
-    { value: "Just starting preparation", label: "Just starting preparation" },
-  ];
 
-  const branchOptions = [
-    { value: "Mechanical", label: "Mechanical" },
-    { value: "Civil", label: "Civil" },
-    { value: "CSE", label: "CSE" },
-    { value: "DA", label: "DA" },
-    { value: "Electrical", label: "Electrical" },
-    { value: "Electronics", label: "Electronics" },
-    { value: "Others", label: "Others" },
-  ];
-  const helpOptions = [
-    {
-      value: "Running out of time during tests despite knowing concepts",
-      label: "Running out of time during tests despite knowing concepts",
-    },
-    {
-      value: "Struggle to retain concepts during revision",
-      label: "Struggle to retain concepts during revision",
-    },
-    {
-      value: "Keep losing marks in topics I thought I mastered",
-      label: "Keep losing marks in topics I thought I mastered",
-    },
-    {
-      value: "Mock test scores aren't reflecting my preparation",
-      label: "Mock test scores aren't reflecting my preparation",
-    },
-    {
-      value: "Need structure in these crucial final months",
-      label: "Need structure in these crucial final months",
-    },
-    {
-      value: "Want more quality practice, beyond basic questions",
-      label: "Want more quality practice, beyond basic questions",
-    },
-  ];
   const animatedComponents = makeAnimated();
 
   const LabelInputContainer = ({
@@ -153,7 +196,7 @@ const Waitlist = () => {
         </div>
         {!formSubmitted ? (
           <div className="max-w-xl w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-gray-100 shadow-sm mt-4">
-            <form className="sm:my-4 my-2" onSubmit={handleSubmit}>
+            <div className="sm:my-4 my-2" >
               <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-6 ">
                 <div className="w-full">
                   <Label htmlFor="name">Name</Label>
@@ -247,18 +290,25 @@ const Waitlist = () => {
                   }
                 />
               </LabelInputContainer>
+                  <OTPcomponent
+                    handleVerify={handleVerifyMobile}
+                    handleClick={handleSendOtp}
+                    title="Join Waitlist"
+                    loading={loading}
+                    loadingVerify={loadingVerify} 
 
-              <Button
+                  />
+              {/* <Button
                 className="w-full mt-4"
                 variant="blueGradient"
                 disabled={loading}
               >
                 {loading ? "Joining Waitlist..." : "Join Waitlist"}
-              </Button>
+              </Button> */}
               <p className="text-primary font-medium text-center text-sm mt-4">
                 Only 100 spots available! Don't miss out
               </p>
-            </form>
+            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center gap-4 sm:mt-12 mt-4">
