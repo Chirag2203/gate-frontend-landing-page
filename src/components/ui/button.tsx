@@ -22,6 +22,7 @@ const buttonVariants = cva(
         blueGradient: "bg-gradient-to-r from-primary to-accent text-white",
         skip: "bg-red-100 text-red-600 font-medium hover:bg-red-200 border-red-200 border",
         solve:" bg-green-100 text-green-800 hover:bg-green-200 font-medium border border-green-300",
+        whatsapp:"bg-green-600 text-white hover:bg-[#075e54] hover:text-white font-medium w-44 h-12",
       },
       size: {
         default: "h-9 px-4 py-2",

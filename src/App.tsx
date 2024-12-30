@@ -9,6 +9,7 @@ import Privacy from "./components/pages/Privacy";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import Refund from "./components/pages/Refund";
 import Contact from "./components/pages/Contact";
+import Whatsapp from "./components/pages/whatsapp/Whatsapp";
 const App = () => {
   return (
     <div>
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/terms" element={<Terms/>} />
           <Route path="/refund-policy" element={<Refund />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/whatsapp" element={<Whatsapp />} />
 
           <Route path="*" element={<NotFound/>} />
         </Routes>

@@ -39,6 +39,9 @@ const Navbar = () => {
             <Link to={"/our-story"} className="text-primary font-medium">
               Our Story
             </Link>
+            <Link to={"/whatsapp"} className="text-primary font-medium">
+              WhatsApp
+            </Link>
             <Link to="https://app.kalppo.com/signin">
               <button className="button-login px-4 py-2 rounded-full ml-4 font-medium">
                 Sign in{" "}
