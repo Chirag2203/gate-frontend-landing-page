@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
-import Drills from "@/assets/Drills.svg";
 import { Link } from "react-router-dom";
 // import { HiArrowUpRight } from "react-icons/hi2";
 import squares from "@/assets/squares.png";
 import { motion } from "framer-motion";
+import Dashboard from "@/assets/Dashboard.png";
 const CTA = () => {
   return (
     <div
-      className="bg-primary mt-24 text-white sm:pb-0  pt-12 items-center flex sm:flex-row flex-col  justify-between bg-center "
+      className="bg-primary mt-24 text-white sm:pb-0  pt-12 items-center flex  flex-col  justify-between bg-center "
       style={{
         backgroundImage: `url(${squares})`, // Set the image as background
       }}
@@ -28,17 +28,17 @@ const CTA = () => {
         whileInView="visible"
         transition={{ duration: 1, delay: 0.1 }}
         viewport={{ once: true }}
-        className="sm:w-2/5 flex flex-col items-center sm:items-start gap-4 px-4 sm:px-16 2xl:px-32 "
+        className=" flex flex-col items-center gap-4 px-4 sm:px-16 2xl:px-32 "
       >
-        <p className="sm:text-3xl text-2xl sm:text-left text-center font-semibold">
+        <p className="sm:text-3xl text-2xl max-w-lg  text-center font-semibold">
           Your Intelligent Path to GATE Success
         </p>
-        <p className=" sm:text-xl sm:text-left text-center">
+        <p className=" sm:text-lg text-center">
           Transform your GATE preparation with personalised AI guidance
         </p>
         <Link to={"/waitlist"}>
-          <Button className="rounded-full text-primary px-7 sm:mt-4 mt-0 bg-gradient-to-b hover:to-gray-200 transition-colors from-white to-white text-md py-5">
-          Join the waitlist
+          <Button className="rounded-full text-primary px-7 mb-20 mt-2 bg-gradient-to-b hover:to-gray-200 transition-colors from-white to-white text-md py-5">
+            Get Started for FREE
             {/* <HiArrowUpRight /> */}
           </Button>
         </Link>
@@ -59,9 +59,9 @@ const CTA = () => {
         whileInView="visible"
         transition={{ duration: 1, delay: 0.1 }}
         viewport={{ once: true }}
-        className="sm:w-2/5 sm:mt-0 mt-8 sm:pl-0 pl-8"
+        className="sm:w-1/2  px-4"
       >
-        <img src={Drills} alt="Drills" />
+        <img src={Dashboard} alt="Drills" />
       </motion.div>
     </div>
   );

@@ -40,9 +40,9 @@ const HeroSection = () => {
         personalised AI guidance.
       </p>
       <div className="flex flex-col gap-2 items-center justify-center my-10">
-        <Link to={"/waitlist"}>
+        <Link to={"https://app.kalppo.com/signup"} target="_blank">
           <Button className="rounded-full px-7 bg-gradient-to-b hover:to-primary-dark/50 transition-colors from-primary to-primary-dark text-md py-5">
-          Join the waitlist <HiArrowUpRight />
+          Signup <HiArrowUpRight />
           </Button>
         </Link>
         <p className="text-sm text-gray-500 ">

@@ -24,9 +24,9 @@ const Footer = () => {
           </Link>
           <div className="flex flex-col sm:items-end gap-4 sm:mt-0 mt-4">
             <ul className="flex flex-col sm:items-end mb-4 gap-4 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
-              <Link to={"/waitlist"}>
-                <Button className="bg-white rounded-full hover:border hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
-                  Join the waitlist <HiArrowUpRight />
+              <Link to={"https://app.kalppo.com/signup"} target="_blank">
+                <Button className="bg-white rounded-full hover:border border border-white hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
+                  Signup <HiArrowUpRight />
                 </Button>
               </Link>
               <div className="flex flex-col sm:items-end ">

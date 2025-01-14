@@ -1,11 +1,29 @@
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 import heroBg from "@/assets/heroBg.png";
+import { motion } from "framer-motion";
 const OurStory = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col items-center px-4 sm:px-14 2xl:px-32 min-h-screen gap-8 bg-center bg-no-repeat"
+      <motion.div
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 40,
+          },
+  
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.1 }}
+        viewport={{ once: true }}
+        
+       className="flex flex-col items-center px-4 sm:px-14 2xl:px-32 min-h-screen gap-8 bg-center bg-no-repeat"
        style={{
         backgroundImage: `url(${heroBg})`, // Set the image as background
       }}>
@@ -43,7 +61,7 @@ const OurStory = () => {
         </p>
       </div>
 
-    </div>
+    </motion.div>
     <Footer/>
     </div>
   )

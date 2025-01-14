@@ -7,7 +7,7 @@ import FAQs from "./FAQs";
 import { motion } from "framer-motion";
 const Pricing = () => {
   // Set the end date to November 24, 2024
-  const endDate = new Date("2024-11-24T00:00:00Z"); // 'Z' denotes UTC timezone
+  const endDate = new Date("2025-02-01T00:00:00Z"); // 'Z' denotes UTC timezone
 
   // State to hold time remaining
   const [timeLeft, setTimeLeft] = useState({
