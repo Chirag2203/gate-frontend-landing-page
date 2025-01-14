@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { HiArrowUpRight } from "react-icons/hi2";
 import squares from "@/assets/squares.png";
 import { motion } from "framer-motion";
-import Dashboard from "@/assets/Dashboard.png";
+import Dashboard from "@/assets/dashboard.png";
 const CTA = () => {
   return (
     <div
