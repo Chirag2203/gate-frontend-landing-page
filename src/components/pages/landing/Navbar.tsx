@@ -33,9 +33,9 @@ const Navbar = () => {
             ))}
           </ul> */}
           <div className="hidden lg:flex justify-center space-x-4 items-center">
-            <Link to={"/pricing"} className="text-primary font-medium">
+            {/* <Link to={"/pricing"} className="text-primary font-medium">
               Pricing
-            </Link>
+            </Link> */}
             <Link to={"/our-story"} className="text-primary font-medium">
               Our Story
             </Link>
@@ -66,11 +66,14 @@ const Navbar = () => {
                 </li>
               ))}
             </ul> */}
-            <Link to={"/pricing"} className="text-primary font-medium">
+            {/* <Link to={"/pricing"} className="text-primary font-medium">
               Pricing
-            </Link>
+            </Link> */}
             <Link to={"/our-story"} className="text-primary font-medium">
               Out Story
+            </Link>
+            <Link to={"/whatsapp"} className="text-primary font-medium">
+              WhatsApp
             </Link>
             <div className="flex space-x-6 ">
               <Link to="https://app.kalppo.com/signin">
