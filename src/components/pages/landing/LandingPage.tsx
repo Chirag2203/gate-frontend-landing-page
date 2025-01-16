@@ -4,13 +4,13 @@ import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import CTA from "./CTA";
 import FAQs from "./FAQs";
-import AlertNews from "./AlertNews";
+// import AlertNews from "./AlertNews";
 // import Pricing from "./Pricing"
 
 const LandingPage = () => {
   return (
     <div className="">
-      <AlertNews />
+      {/* <AlertNews /> */}
       <Navbar />
       <div className="2xl:px-32">
       <HeroSection />
