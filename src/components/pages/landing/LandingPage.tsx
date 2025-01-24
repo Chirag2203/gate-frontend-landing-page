@@ -12,7 +12,7 @@ const LandingPage = () => {
   return (
     <div>
       <Helmet>
-        <title>EdTech Platform - Empower Learning</title>
+        <title>Kalppo - Empower Learning</title>
         <meta
           name="description"
           content="Your one-stop solution for B2B and B2C EdTech needs. Unlock better learning experiences today with Kalppo's AI solutions."
