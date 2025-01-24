@@ -14,6 +14,7 @@ import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
 import { motion } from "framer-motion"
 import { FaWhatsapp } from "react-icons/fa6"
+import { Helmet } from "react-helmet-async"
 
 const Whatsapp = () => {
     const copyToClipboard = () => {
@@ -26,6 +27,23 @@ const Whatsapp = () => {
     };
     return (
         <div>
+             {/* Add Helmet for SEO */}
+             <Helmet>
+                <title>Learn GATE on WhatsApp | Kalppo</title>
+                <meta name="description" content="Supercharge your GATE preparation with tailored practice questions, daily challenges, and progress tracking—all on WhatsApp." />
+                <meta name="keywords" content="GATE preparation, WhatsApp learning, practice questions, daily challenges, progress tracking, GATE study" />
+                <meta property="og:title" content="Learn GATE on WhatsApp | Kalppo" />
+                <meta property="og:description" content="Join Kalppo on WhatsApp for GATE preparation. Practice questions, daily challenges, and track your progress easily." />
+                <meta property="og:image" content={whatsappBg} />
+                <meta property="og:url" content="https://wa.me/message/AZBPWRR2G4ZRO1" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Learn GATE on WhatsApp | Kalppo" />
+                <meta name="twitter:description" content="Supercharge your GATE preparation with Kalppo on WhatsApp. Practice questions, daily challenges, and more." />
+                <meta name="twitter:image" content={whatsappBg} />
+                <link rel="canonical" href="https://wa.me/message/AZBPWRR2G4ZRO1" />
+            </Helmet>
+
+            
             <Navbar />
             <img src={whatsappDeco1} alt="whatsappBg" className="w-full absolute" />
             <motion.div variants={{
