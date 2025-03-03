@@ -21,6 +21,11 @@ export const preperationStatusOptions = [
     { value: "Electronics", label: "Electronics" },
     { value: "Others", label: "Others" },
   ];
+  export const coachingsOptions = [
+    { value: "Small coaching", label: "Small coaching" },
+    { value: "Medium coaching", label: "Medium coaching" },
+    { value: "Large coaching", label: "Large coaching" },
+  ];
   export const helpOptions = [
     {
       value: "Running out of time during tests despite knowing concepts",

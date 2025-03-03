@@ -30,11 +30,10 @@ const FeatureSection = () => {
       >
         <p className="text-primary font-medium text-sm">WHY USE KALPP0</p>
         <p className="sm:text-3xl text-2xl font-bold mt-4 text-center sm:text-left">
-          Study Smarter, Not Harder
+          Teach Smarter, Achieve More
         </p>
         <p className="sm:text-lg text-neutral-500 mt-4 max-w-xl text-center">
-          Turn your revisions into results with AI-powered drills, smart
-          flashcards and personalized weak area analysis.
+        Transform your classroom instruction into measurable student success with our proven educational methodology
         </p>
       </motion.div>
       <div className="w-full flex sm:flex-row flex-col mt-16 justify-between items-center">
@@ -82,8 +81,7 @@ const FeatureSection = () => {
                   Roadmap
                 </p>
                 <p className="text-neutral-500 sm:text-md text-sm ">
-                  Turn GATE preparation into an engaging game. Boost your score
-                  and let go of your exam anxieties.
+                Get a detailed analysis of your teaching approach and a clear path to improving student outcomes with actionable milestones
                 </p>
               </div>
             </div>
@@ -113,11 +111,10 @@ const FeatureSection = () => {
               </div>
               <div className="flex flex-col gap-2 items-start">
                 <p className="sm:text-2xl text-xl font-semibold ">
-                  Smart Flashcards
+                  Detailed Analytics
                 </p>
                 <p className="text-neutral-500 sm:text-md text-sm">
-                  Revise 2x faster with personalised flashcards. No more looking
-                  for notes on the internet.
+                Track student progress with comprehensive data visualization. Identify learning gaps and measure improvement in real-time.
                 </p>
               </div>
             </div>
@@ -151,8 +148,7 @@ const FeatureSection = () => {
                   Socratic Learning
                 </p>
                 <p className="text-neutral-500 sm:text-md text-sm ">
-                  Your 24x7 GATE mentor. No more jumping from one resource to
-                  another. Get all your doubts cleared.
+                Your 24/7 Teaching Assistant. Leverage engaging communities to find solutions to instructional challenges
                 </p>
               </div>
             </div>
@@ -182,10 +178,10 @@ const FeatureSection = () => {
               </div>
               <div className="flex flex-col gap-2 items-start">
                 <p className="sm:text-2xl text-xl font-semibold ">
-                  Tests
+                  Adaptive Assesments
                 </p>
                 <p className="text-neutral-500 sm:text-md text-sm ">
-                  Turn GATE preparation into an engaging game. Boost your score and let go of your exam anxieties
+                Turn exam preparation into an engaging experience. Boost your students' scores and eliminate test anxiety
                 </p>
               </div>
             </div>

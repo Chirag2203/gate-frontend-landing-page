@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg px-4 sm:px-16 2xl:px-32">
+    <nav className="sticky font-jakarta top-0 z-50 py-3 backdrop-blur-lg px-4 sm:px-16 2xl:px-32">
       <div className="container  mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <Link to={"/"}>
@@ -39,12 +39,12 @@ const Navbar = () => {
             <Link to={"/our-story"} className="text-primary font-medium">
               Our Story
             </Link>
-            <Link to={"/whatsapp"} className="text-primary font-medium">
+            {/* <Link to={"/whatsapp"} className="text-primary font-medium">
               WhatsApp
-            </Link>
-            <Link to="https://app.kalppo.com/signin">
+            </Link> */}
+            <Link to="/waitlist">
               <button className="button-login px-4 py-2 rounded-full ml-4 font-medium">
-                Sign in{" "}
+                Pricing{" "}
                 <div className="arrow-wrapper">
                   <div className="arrow"></div>
                 </div>

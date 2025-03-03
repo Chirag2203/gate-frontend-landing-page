@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 
 import { Input2 } from "@/components/ui/input2";
 import { Label } from "@/components/ui/label";
-import { NotebookIcon, RocketIcon, Sparkles } from "lucide-react";
+// import { NotebookIcon, RocketIcon, Sparkles } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import OTPcomponent from "@/components/shared/OTPcomponent";
-import { branchOptions, helpOptions, preperationStatusOptions } from "@/constants/data";
+import { branchOptions, coachingsOptions } from "@/constants/data";
 
 const BASE_URL = "https://kalppo-backend.vercel.app/auth/otp";
 
@@ -168,19 +168,18 @@ const Waitlist = () => {
   };
 
   return (
-    <div className="">
+    <div className="font-jakarta">
       <Navbar />
-      <div className="px-4 sm:px-16 mt-8 sm:mt-12 2xl:px-32 flex flex-col sm:gap-0 min-h-screen items-center w-full">
+      <div className="px-4 sm:px-16 mt-8 sm:mt-12 2xl:px-32 flex flex-col sm:gap-12 min-h-screen items-center w-full ">
         <div>
           <p className="text-center sm:text-3xl text-2xl font-semibold text-primary sm:mb-0 mb-2">
-            Be Among the First to Transform Your GATE Journey
+          Fuel Your Teaching
           </p>
-          <p className="text-gray-700 max-w-xl sm:text-md text-sm mx-auto text-center">
-            Join the waitlist for the December launch. Selected 100 users get
-            FREE access until GATE 2025!
+          <p className="text-gray-700 max-w-xl mt-2 mx-auto text-center">
+          Personalize teaching strategies to master complex concepts, overcome learning barriers, and achieve your educational goals
           </p>
         </div>
-        <div className="mt-12 mb-8 gap-4 w-full flex flex-col items-center justify-center">
+        {/* <div className="mt-12 mb-8 gap-4 w-full flex flex-col items-center justify-center">
           <p className="font-semibold sm:text-xl text-lg">Why Join Waitlist?</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center justify-center w-full sm:px-24">
             <div className="border px-4 py-4 flex gap-2 rounded-md border-blue-100 text-primary bg-white font-medium text-center">
@@ -193,7 +192,7 @@ const Waitlist = () => {
               <RocketIcon /> Head Start Advantage
             </div>
           </div>
-        </div>
+        </div> */}
         {!formSubmitted ? (
           <div className="max-w-xl w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-gray-100 shadow-sm mt-4">
             <div className="sm:my-4 my-2" >
@@ -225,13 +224,13 @@ const Waitlist = () => {
                 />
               </div>
               <LabelInputContainer className="mb-6">
-                <Label htmlFor="branch">Branch</Label>
+                <Label htmlFor="branch">Coaching Type</Label>
                 <Select
                   closeMenuOnSelect={true}
                   placeholder="Select branch"
                   className="text-sm"
                   components={animatedComponents}
-                  options={branchOptions}
+                  options={coachingsOptions}
                   value={branchOptions.find(
                     (option) => option.value === userData.branch
                   )}
@@ -243,7 +242,7 @@ const Waitlist = () => {
                   }
                 />
               </LabelInputContainer>
-              <LabelInputContainer className="mb-6">
+              {/* <LabelInputContainer className="mb-6">
                 <Label htmlFor="preparationStatus">
                   Current preparation status
                 </Label>
@@ -263,8 +262,8 @@ const Waitlist = () => {
                     })
                   }
                 />
-              </LabelInputContainer>
-              <LabelInputContainer className="mb-6">
+              </LabelInputContainer> */}
+              {/* <LabelInputContainer className="mb-6">
                 <Label htmlFor="mostHelpNeededWith">
                   What do you need most help with
                 </Label>
@@ -289,7 +288,7 @@ const Waitlist = () => {
                     })
                   }
                 />
-              </LabelInputContainer>
+              </LabelInputContainer> */}
                   <OTPcomponent
                     handleVerify={handleVerifyMobile}
                     handleClick={handleSendOtp}
@@ -305,9 +304,9 @@ const Waitlist = () => {
               >
                 {loading ? "Joining Waitlist..." : "Join Waitlist"}
               </Button> */}
-              <p className="text-primary font-medium text-center text-sm mt-4">
+              {/* <p className="text-primary font-medium text-center text-sm mt-4">
                 Only 100 spots available! Don't miss out
-              </p>
+              </p> */}
             </div>
           </div>
         ) : (

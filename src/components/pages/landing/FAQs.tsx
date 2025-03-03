@@ -15,6 +15,7 @@ const FAQs = () => {
       <p className="sm:text-3xl text-2xl font-bold sm:mt-2 sm:text-left text-center">
         Frequently Asked Questions
       </p>
+      <p className="mt-2 text-gray-700">Get clarity on how we're transforming classroom instruction in today's challenging educational environment.</p>
       <motion.div
         variants={{
           hidden: {

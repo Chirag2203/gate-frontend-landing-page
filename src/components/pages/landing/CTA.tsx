@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { HiArrowUpRight } from "react-icons/hi2";
 import squares from "@/assets/squares.png";
 import { motion } from "framer-motion";
-import Dashboard from "@/assets/dashboard.png";
+// import Dashboard from "@/assets/dashboard.png";
 const CTA = () => {
   return (
     <div
@@ -31,10 +31,11 @@ const CTA = () => {
         className=" flex flex-col items-center gap-4 px-4 sm:px-16 2xl:px-32 "
       >
         <p className="sm:text-3xl text-2xl max-w-lg  text-center font-semibold">
-          Your Intelligent Path to GATE Success
+        Building Future Leaders <br />
+        Through Targeted Teaching
         </p>
-        <p className=" sm:text-lg text-center">
-          Transform your GATE preparation with personalised AI guidance
+        <p className=" sm:text-lg text-center max-w-lg">
+        Committed to transforming education through personalized instructional tools and innovative learning solutions
         </p>
         <Link to={"/waitlist"}>
           <Button className="rounded-full text-primary px-7 mb-20 mt-2 bg-gradient-to-b hover:to-gray-200 transition-colors from-white to-white text-md py-5">
@@ -43,7 +44,7 @@ const CTA = () => {
           </Button>
         </Link>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={{
           hidden: {
             opacity: 0,
@@ -62,7 +63,7 @@ const CTA = () => {
         className="sm:w-1/2  px-4"
       >
         <img src={Dashboard} alt="Drills" />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

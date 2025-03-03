@@ -24,9 +24,9 @@ const Footer = () => {
           </Link>
           <div className="flex flex-col sm:items-end gap-4 sm:mt-0 mt-4">
             <ul className="flex flex-col sm:items-end mb-4 gap-4 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
-              <Link to={"https://app.kalppo.com/signup"} target="_blank">
+              <Link to={"/waitlist"} target="_blank">
                 <Button className="bg-white rounded-full hover:border border border-white hover:border-white hover:bg-primary text-primary hover:text-white  w-full">
-                  Signup <HiArrowUpRight />
+                  Experience Today <HiArrowUpRight />
                 </Button>
               </Link>
               <div className="flex flex-col sm:items-end ">
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex sm:items-center items-start">
           <div className="flex sm:gap-8 gap-4 sm:flex-row flex-col">
             <p className="text-sm text-gray-200">
-              © {new Date().getFullYear()} MGSR Technologies{" "}
+              © {new Date().getFullYear()} Kalppo{" "}
               <br className="sm:hidden block" /> All rights reserved.
             </p>
           </div>
@@ -72,10 +72,10 @@ const Footer = () => {
             </p>
           </Link>
           <LuDot  className="sm:block hidden"/>
-          <Link to={"/refund-policy"} target="_blank">
+          {/* <Link to={"/refund-policy"} target="_blank">
             <p className="text-sm text-gray-200 hover:text-white">Refund Policy</p>
-          </Link>
-          <LuDot  className="sm:block hidden"/>
+          </Link> */}
+          {/* <LuDot  className="sm:block hidden"/> */}
           <Link to={"/contact"} target="_blank">
             <p className="text-sm text-gray-200 hover:text-white">Contact Us</p>
           </Link>

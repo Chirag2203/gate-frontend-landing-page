@@ -1,7 +1,7 @@
 import FeatureSection from "./FeatureSection";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import CTA from "./CTA";
 import FAQs from "./FAQs";
 import { Helmet } from "react-helmet-async";
@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className="font-jakarta">
       <Helmet>
         <title>Kalppo - Empower Learning</title>
         <meta
@@ -25,9 +25,9 @@ const LandingPage = () => {
       </Helmet>
 
       {/* <AlertNews /> */}
-      <Navbar />
-      <div className="2xl:px-32">
+      {/* <Navbar /> */}
         <HeroSection />
+      <div className="2xl:px-32">
         <FeatureSection />
       </div>
       <CTA />
