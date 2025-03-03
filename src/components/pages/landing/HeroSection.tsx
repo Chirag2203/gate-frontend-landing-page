@@ -31,24 +31,24 @@ const HeroSection = () => {
     >
       <img src={squares} alt="" className="absolute bottom-0 w-1/2 right-0" />
       <img src={squares} alt="" className="absolute -top-64 -left-52" />
-      <div className="flex items-center gap-2 justify-between w-full px-4 text-xl text-white mb-12">
-        <p className="text-2xl font-semibold">Kalppo</p>
+      <div className="flex items-center gap-2 justify-between w-full px-4 sm:text-xl text-lg text-white mb-12">
+       <Link to={"/"}>  <p className="sm:text-2xl text-xl font-semibold">Kalppo</p></Link>
         <div className="flex items-center gap-4 ">
           <Link to="/"><p className=" cursor-pointer">Home</p></Link>
          <Link to={"/waitlist"}> <p className=" cursor-pointer">Pricing </p></Link>
         </div>
       </div>
-      <div className="flex gap-4 items-center justify-between w-full px-4 sm:px-4">
-        <div className="sm:w-1/2 w-full flex flex-col gap-8">
+      <div className="flex sm:flex-row flex-col gap-4 items-center justify-between w-full px-4 sm:px-4">
+        <div className="sm:w-1/2 w-full flex flex-col gap-8 sm:items-start items-center">
           <button className="button-ai px-4 py-2 sm:mb-2 mb-0 bg-primary font-semibold tracking-tigh text-white w-fit">
             <HiSparkles className="text-yellow-500" />
             Personalised with AI
           </button>
-          <p className="text-4xl sm:text-7xl flex flex-col gap-4 font-semibold  text-white ">
+          <p className="text-4xl sm:text-7xl flex flex-col gap-4 font-semibold  text-white sm:items-start items-center">
             <p>Supercharge your </p>
            <p> Teaching Impact</p>
           </p>
-          <p className="text-xl sm:text-2xl text-white font-light">Personalized instructional strategies to deliver complex concepts, overcome student learning barriers, and maximize your classroom outcomes</p>
+          <p className="text-xl sm:text-2xl text-white font-light sm:text-left text-center">Personalized instructional strategies to deliver complex concepts, overcome student learning barriers, and maximize your classroom outcomes</p>
           <Link to={"/waitlist"}>
             <Button className="bg-white text-primary rounded-full hover:bg-gray-100 hover:text-primary" size={"lg"}>
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 sm:mt-0 mt-8">
           <img
             src={landingPhone}
             alt="phone"
