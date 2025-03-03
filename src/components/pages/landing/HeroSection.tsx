@@ -44,7 +44,7 @@ const HeroSection = () => {
             <HiSparkles className="text-yellow-500" />
             Personalised with AI
           </button>
-          <p className="text-4xl sm:text-7xl flex flex-col gap-4 font-semibold  text-white sm:items-start items-center">
+          <p className="text-4xl sm:text-7xl flex flex-col gap-4 font-semibold  text-white sm:text-left text-center sm:items-start items-center">
             <p>Supercharge your </p>
            <p> Teaching Impact</p>
           </p>
