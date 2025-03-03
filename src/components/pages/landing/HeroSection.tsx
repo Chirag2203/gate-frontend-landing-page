@@ -58,7 +58,7 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
-        <div>
+        <div className="mb-4">
           <img
             src={landingPhone}
             alt="phone"
